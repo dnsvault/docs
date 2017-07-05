@@ -1,0 +1,3 @@
+# Zones
+
+## Get All Zones
