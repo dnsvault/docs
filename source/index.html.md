@@ -1,9 +1,8 @@
 ---
-title: API Reference
+title: DNSVault - API Reference
 
 language_tabs:
   - shell
-  - ruby
 
 toc_footers:
   - <a href='developer.dnsvalt.net/sign_in'>Sign Up for a Developer Key</a>
@@ -47,7 +46,7 @@ api = Kittn::APIClient.authorize!('meowmeowmeow')
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-DNSVaultuses API keys to allow access to the API. You can register a new DNSVault API key at our [developer portal](http://example.com/developers).
+DNSVault uses API keys to allow access to the API. You can register a new DNSVault API key at our [developer portal](http://www.dnsvault.net/developers).
 
 DNSVaultexpects for the API key to be included in all API requests to the server in a header that looks like the following:
 
