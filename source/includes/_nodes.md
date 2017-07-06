@@ -36,11 +36,11 @@ api.kittens.get
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all nodes.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/nodes`
 
 ### Query Parameters
 
@@ -82,22 +82,59 @@ api.kittens.get(2)
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific node.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/nodes/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the node to retrieve
 
 ## Delete a Specific Node
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
 
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "name": "Max",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
+}
+```
+
+This endpoint delete a specific node.
+
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+
+### HTTP Request
+
+`GET http://example.com/nodes/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the node to delete
 
 ## List all Certs
 
