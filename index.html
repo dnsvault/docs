@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>DNSVault - API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -200,7 +200,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,7 +211,6 @@
       <img src="images/logo.svg" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -249,7 +248,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
 </blockquote>
 
-<p>DNSVaultuses API keys to allow access to the API. You can register a new DNSVault API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>DNSVault uses API keys to allow access to the API. You can register a new DNSVault API key at our <a href="http://www.dnsvault.net/developers">developer portal</a>.</p>
 
 <p>DNSVaultexpects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
@@ -262,31 +261,26 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
           <h1 id="nodes">Nodes</h1>
 
 <h2 id="get-all-nodes">Get All Nodes</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://www.dnsvault.net/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/nodes'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-22T16:10:10.602Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-22T16:10:10.602Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64:9E:06:F0:0C:AB:0F:63:2B:0D:DC:C6:E2:DF:BE:33:8F:69:3C:A0:99:D8:1F:65:76:AE:EA:DA:C6:64:12:3F"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fingerprint_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHA256"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all nodes.</p>
@@ -295,48 +289,27 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 <p><code class="prettyprint">GET http://www.dnsvault.net/nodes</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
 <h2 id="get-a-specific-node">Get a Specific Node</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://www.dnsvault.net/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/nodes/2'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-22T16:10:10.602Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-22T16:10:10.602Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64:9E:06:F0:0C:AB:0F:63:2B:0D:DC:C6:E2:DF:BE:33:8F:69:3C:A0:99:D8:1F:65:76:AE:EA:DA:C6:64:12:3F"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fingerprint_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHA256"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific node.</p>
@@ -345,7 +318,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -362,22 +335,17 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody></table>
 
 <h2 id="delete-a-specific-node">Delete a Specific Node</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://www.dnsvault.net/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/nodes/2'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"7005"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Node has been deleted"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint delete a specific node.</p>
@@ -386,7 +354,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -403,22 +371,304 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody></table>
 
 <h2 id="list-all-certs">List all Certs</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/nodes/certificates'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic3.dnsvault.net"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(SHA256)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BB:52:BC:9B:EF:3F:19:40:D0:C4:21:7E:F2:F7:5F:9B:80:06:33:5D:86:CB:DB:3C:D7:7D:50:38:ED:E1:51:4B"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test01.me.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(SHA256)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EA:0D:3B:D8:B3:15:D1:91:5E:D5:4E:C3:FE:6A:C6:D8:41:C4:E9:11:60:33:4D:DE:40:AF:2D:72:05:D0:A8:0D"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of certificates.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/certificates</code></p>
 
 <h2 id="list-all-nodes-requests">List all Nodes Requests</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/nodes/node_request'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(SHA256)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B8:FD:D2:8F:33:B1:FF:AC:5F:60:0A:DA:70:66:09:87:EA:B7:4C:14:8D:0F:4F:B0:67:60:69:83:9E:48:78:15"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of node request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/node_request</code></p>
 
 <h2 id="sign-reject-a-node">Sign/Reject a Node</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request PUT <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">node_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">elastic2.dnsvault.net</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">node_action</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">accept</span><span class="se">\"</span><span class="s2">
+}"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/nodes/node_request'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(SHA256)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B8:FD:D2:8F:33:B1:FF:AC:5F:60:0A:DA:70:66:09:87:EA:B7:4C:14:8D:0F:4F:B0:67:60:69:83:9E:48:78:15"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of node request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT http://www.dnsvault.net/nodes/node_request</code></p>
 
           <h1 id="views">Views</h1>
 
-<h2 id="get-view">Get View</h2>
+<h2 id="get-all-views">Get All Views</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/views'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"view_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roxme"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is for internal network"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-25T04:42:39.111Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-25T04:42:39.146Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-23T03:44:19.064Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-23T03:44:19.064Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fingerprint_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHA256"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of views.</p>
 
-<h2 id="show-view">Show View</h2>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/views</code></p>
+
+<h2 id="get-view">Get View</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/views/2'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"view_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roxme"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is for internal network"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-25T04:42:39.111Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-25T04:42:39.146Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-23T03:44:19.064Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-23T03:44:19.064Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHA256"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint get details of a view.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/views/:id</code></p>
 
 <h2 id="create-view">Create View</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">view</span><span class="se">\"</span><span class="s2">: {
+        </span><span class="se">\"</span><span class="s2">view_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">internal</span><span class="se">\"</span><span class="s2">,
+        </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
+    }
+}"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/views'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"view_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is for internal network"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-25T05:18:20.646Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-25T05:18:20.646Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-23T03:44:19.064Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-23T03:44:19.064Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHA256"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint create a views.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://www.dnsvault.net/views</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view_name</td>
+<td>View Name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Description Of View</td>
+</tr>
+</tbody></table>
 
 <h2 id="update-view">Update View</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">view</span><span class="se">\"</span><span class="s2">: {
+        </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
+    }
+}"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/views/18'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="s2">"view_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Couldn't find View with view_id 19"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"controller"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api/v1/views"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"view"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint update a views.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT http://www.dnsvault.net/views/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>description</td>
+<td>Description Of View</td>
+</tr>
+</tbody></table>
 
 <h2 id="delete-view">Delete View</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/views/2'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="s2">"view_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Couldn't find View with view_id 10"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"controller"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api/v1/views"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"destroy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"view"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a view.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/views/:id</code></p>
 
           <h1 id="zones">Zones</h1>
 
@@ -518,7 +768,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
           </div>
       </div>
     </div>
