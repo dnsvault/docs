@@ -4,7 +4,7 @@
 
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://www.dnsvault.net/api/kittens"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -40,7 +40,7 @@ This endpoint retrieves all nodes.
 
 ### HTTP Request
 
-`GET http://example.com/nodes`
+`GET http://www.dnsvault.net/nodes`
 
 ### Query Parameters
 
@@ -58,7 +58,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://www.dnsvault.net/api/kittens/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -88,7 +88,7 @@ This endpoint retrieves a specific node.
 
 ### HTTP Request
 
-`GET http://example.com/nodes/<ID>`
+`GET http://www.dnsvault.net/nodes/<ID>`
 
 ### URL Parameters
 
@@ -98,7 +98,7 @@ ID | The ID of the node to retrieve
 
 ## Delete a Specific Node
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://www.dnsvault.net/api/kittens/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -128,7 +128,7 @@ This endpoint delete a specific node.
 
 ### HTTP Request
 
-`GET http://example.com/nodes/<ID>`
+`GET http://www.dnsvault.net/nodes/<ID>`
 
 ### URL Parameters
 
