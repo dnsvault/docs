@@ -454,6 +454,8 @@ Remember — a happy kitten is an authenticated kitten!
           <h1 id="views">Views</h1>
 
 <h2 id="get-all-views">Get All Views</h2>
+
+<p>You may list collection of view using this action. Default per page is 20 views, you can specify page and per_page parameters. e.g. http://srv1.dnsvault.net:3000/api/v1/views?page=1&amp;per_page=20</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
   <span class="s1">'http://www.dnsvault.net/views'</span>
@@ -672,27 +674,393 @@ Remember — a happy kitten is an authenticated kitten!
 
           <h1 id="zones">Zones</h1>
 
-<h2 id="get-zones">Get Zones</h2>
+<h2 id="list-all-zones">List all Zones</h2>
+
+<p>You may list collection of zones using this action.</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/4/dns/views/5/zones'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"view_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amir.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amir's domain name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"boolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-22T10:42:33.802Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-22T10:42:38.387Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of zones.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/views/:id/zones</code></p>
 
 <h2 id="show-zone">Show Zone</h2>
 
+<p>You may list a zone using this action.</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/4/dns/views/5/zones/5'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"view_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zone_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amir.my"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amir's domain name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zone_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"boolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-22T10:42:33.802Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-22T10:42:38.387Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of zones.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
+
 <h2 id="create-zone">Create Zone</h2>
+
+<p>You may create a zone using this action. It takes a JSON object containing a parameters.</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">zone_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">amir.my</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Amir</span><span class="se">\'</span><span class="s2">s domain name</span><span class="se">\"</span><span class="s2">
+}"</span> <span class="se">\</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/node_id/dns/views/view_id/zones'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"view_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zone_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amir.my"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amir's domain name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zone_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"boolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-22T10:42:33.802Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-22T10:42:38.387Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint create a zone.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/node_id/dns/views/view_id/zones</code></p>
 
 <h2 id="delete-zone">Delete Zone</h2>
 
+<p>You may delete a zone using this action.</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request DELETE <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id'</span>
+</code></pre>
+<p>The above command returns JSON structured like this:</p>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"7005"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zone has been deleted"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a zone.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/node_id/dns/views/view_id/zones</code></p>
+
           <h1 id="records">Records</h1>
 
-<h2 id="get-records">Get Records</h2>
+<h2 id="list-all-records">List all Records</h2>
+
+<p>You may list collection of zone using this action.</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.dnsvault.net. amir.localhost.my. 1 86400 7200 3600000 3600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T16:57:19.249Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T16:57:19.249Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.dnsvault.net."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T16:57:19.259Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T16:57:19.259Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1.test05.my."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86400"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.2.101"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T16:59:18.802Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T16:59:18.802Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1.test05.my."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86400"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.2.109"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:00:32.953Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:00:32.953Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint show all records.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/views/:id/zones/:zone_id/records</code></p>
 
 <h2 id="show-record">Show Record</h2>
 
 <h2 id="create-records">Create Records</h2>
 
+<p>You may create multiple records for a host. After create you can check using dig tool, example: dig @srv1.dnsvault.net sample1.test05.my any</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">host</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">sample1</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">records</span><span class="se">\"</span><span class="s2">: [
+        { </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">A</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2.2.2.2</span><span class="se">\"</span><span class="s2">},
+        { </span><span class="se">\"</span><span class="s2">ttl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">7200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MX</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">10 mail.server01.com.</span><span class="se">\"</span><span class="s2">}
+    ]
+}"</span> <span class="se">\</span>
+<span class="s1">'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1.test05.my."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.2.2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:54:09.796Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:54:09.796Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1.test05.my."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7200"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10 mail.server01.com."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:54:10.197Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:54:10.197Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint create multiple records.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records</code></p>
+
 <h2 id="create-record">Create Record</h2>
+
+<p>You may create one records for a host. After create you can check using dig tool, example: dig @srv1.dnsvault.net sample1.test05.my any</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">host</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">sample1</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">record</span><span class="se">\"</span><span class="s2">: 
+            {
+                </span><span class="se">\"</span><span class="s2">ttl</span><span class="se">\"</span><span class="s2">:3600,
+                </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">A</span><span class="se">\"</span><span class="s2">,
+                </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2.2.2.2</span><span class="se">\"</span><span class="s2">
+            }
+}"</span> <span class="se">\</span>
+<span class="s1">'http://vpn.labs.my:3000/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id/record'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amir.my"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1.amir.my."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.2.2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-11T13:17:28.871Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-11T13:17:28.871Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint create a record.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/record</code></p>
 
 <h2 id="delete-records">Delete Records</h2>
 
 <h2 id="delete-record">Delete Record</h2>
+
+<p>You may delete records of host using this action. For testing you can use dig tool example: dig @srv1.dnsvault.net sample1.test05.my any</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">host</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">sample1</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">records</span><span class="se">\"</span><span class="s2">: [
+        { </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">A</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2.2.2.2</span><span class="se">\"</span><span class="s2">},
+        { </span><span class="se">\"</span><span class="s2">ttl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">7200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MX</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">10 mail.server01.com.</span><span class="se">\"</span><span class="s2">}
+    ]
+}"</span> <span class="se">\</span>
+<span class="s1">'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test05.my"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_combine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1.test05.my."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_ttl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86400"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rr_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.2.2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"processing_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"backend_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delete_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:54:09.796Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-30T17:54:09.796Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Record with type: MX and data: 10 mx.com. is not available, please try again."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint create a record.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records</code></p>
 
           <h1 id="access-control-list">Access Control List</h1>
 
