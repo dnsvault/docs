@@ -7,7 +7,7 @@ You may list collection of zone using this action.
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records'
+  'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/records'
 ```
 
 
@@ -90,7 +90,7 @@ This endpoint show all records.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/views/:id/zones/:zone_id/records`
+`GET http://www.dnsvault.net/views/:view_id/zones/:zone_id/records`
 
 ## Show Record
 
@@ -109,7 +109,7 @@ curl --include \
         { \"ttl\":\"7200\", \"type\":\"MX\", \"data\":\"10 mail.server01.com.\"}
     ]
 }" \
-'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records'
+'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/records'
 ```
 
 
@@ -163,7 +163,7 @@ This endpoint create multiple records.
 
 ### HTTP Request
 
-`POST http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records`
+`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id/records`
 
 ## Create Record
 
@@ -183,7 +183,7 @@ curl --include \
                 \"data\": \"2.2.2.2\"
             }
 }" \
-'http://vpn.labs.my:3000/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id/record'
+'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/record'
 ```
 
 
@@ -213,7 +213,7 @@ This endpoint create a record.
 
 ### HTTP Request
 
-`POST http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/record`
+`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id/record`
 
 
 ## Delete Records
@@ -223,7 +223,7 @@ You may delete records of host using this action. For testing you can use dig to
 
 ```shell
 curl --include \
-     --request POST \
+     --request DELETE \
      --header "Content-Type: application/json" \
      --data-binary "{
     \"host\": \"sample1\",
@@ -232,7 +232,7 @@ curl --include \
         { \"ttl\":\"7200\", \"type\":\"MX\", \"data\":\"10 mail.server01.com.\"}
     ]
 }" \
-'http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records'
+'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/records'
 ```
 
 
@@ -274,4 +274,4 @@ This endpoint create a record.
 
 ### HTTP Request
 
-`DELETE http://vpn.labs.my:3000/api/v1/nodes/node_id/dns/views/view_id/zones/id/records`
+`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id/records`

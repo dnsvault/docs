@@ -1,9 +1,6 @@
 ---
 title: DNSVault - API Reference
 
-language_tabs:
-  - shell
-
 toc_footers:
   - <a href='developer.dnsvalt.net/sign_in'>Sign Up for a Developer Key</a>
   - <a href='https://dnsvault.github.op'>Visit Site</a>
@@ -11,9 +8,12 @@ toc_footers:
 includes:
   - nodes
   - views
+  - view_statements
   - zones
+  - zone_statements
   - records
   - acls
+  - amls
   - errors
 
 search: true
