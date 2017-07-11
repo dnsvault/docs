@@ -2,7 +2,7 @@
 
 ## List all Zone Statement
 
-You may list collection of View Statement using this action.
+You may list collection of Zone Statement using this action.
 
 ```shell
 curl --include \
