@@ -1,6 +1,7 @@
 # Views
 
 ## Get All Views
+You may list collection of view using this action. Default per page is 20 views, you can specify page and per_page parameters. e.g. http://srv1.dnsvault.net:3000/api/v1/views?page=1&per_page=20
 
 ```shell
 curl --include \
