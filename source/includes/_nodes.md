@@ -82,6 +82,7 @@ ID | The ID of the node to retrieve
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --request DELETE \
   'http://www.dnsvault.net/nodes/2'
 ```
 
@@ -207,3 +208,4 @@ This endpoint get list of node request.
 ### HTTP Request
 
 `PUT http://www.dnsvault.net/nodes/node_request`
+

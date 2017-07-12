@@ -151,7 +151,7 @@ description | Description Of View
 
 ```shell
 curl --include \
-     --request POST \
+     --request PUT \
      --header "Content-Type: application/json" \
      --data-binary "{
     \"view\": {
@@ -201,6 +201,7 @@ description | Description Of View
 
 ```shell
 curl --include \
+     --request DELETE \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
   'http://www.dnsvault.net/nodes/2/dns/views/2'
 ```

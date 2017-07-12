@@ -1,6 +1,9 @@
 ---
 title: DNSVault - API Reference
 
+language_tabs:
+    - shell
+
 toc_footers:
   - <a href='developer.dnsvalt.net/sign_in'>Sign Up for a Developer Key</a>
   - <a href='https://dnsvault.github.op'>Visit Site</a>
@@ -23,7 +26,7 @@ search: true
 
 Welcome to the DNSVault API! You can use our API to access DNSVault API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 
 # Authentication
@@ -37,12 +40,6 @@ curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
 
 > Make sure to replace `meowmeowmeow` with your API key.
 

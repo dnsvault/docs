@@ -242,7 +242,7 @@ You may update a zone using this action.
 
 ```shell
 curl --include \
-     --request POST \
+     --request PUT \
      --header "Content-Type: application/json" \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
      --data-binary "{
