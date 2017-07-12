@@ -200,7 +200,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -209,6 +209,9 @@
     </a>
     <div class="tocify-wrapper">
       <img src="images/logo.svg" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -227,7 +230,7 @@
 
 <p>Welcome to the DNSVault API! You can use our API to access DNSVault API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>We have language bindings in Shell! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -237,9 +240,6 @@
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
@@ -334,6 +334,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id="delete-a-specific-node">Delete a Specific Node</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+     --request DELETE <span class="se">\</span>
   <span class="s1">'http://www.dnsvault.net/nodes/2'</span>
 </code></pre>
 <blockquote>
@@ -596,7 +597,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h2 id="update-view">Update View</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-     --request POST <span class="se">\</span>
+     --request PUT <span class="se">\</span>
      --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      --data-binary <span class="s2">"{
     </span><span class="se">\"</span><span class="s2">view</span><span class="se">\"</span><span class="s2">: {
@@ -649,6 +650,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h2 id="delete-view">Delete View</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request DELETE <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
   <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/2'</span>
 </code></pre>
@@ -1156,7 +1158,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>You may update a zone using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-     --request POST <span class="se">\</span>
+     --request PUT <span class="se">\</span>
      --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
      --data-binary <span class="s2">"{
@@ -2054,6 +2056,9 @@ Remember — a happy kitten is an authenticated kitten!
 
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
       </div>
     </div>
   </body>
