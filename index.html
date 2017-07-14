@@ -260,7 +260,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <h2 id="get-all-nodes">Get All Nodes</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -284,7 +284,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes</code></p>
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -293,7 +293,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id="get-a-specific-node">Get a Specific Node</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -315,7 +315,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -335,7 +335,7 @@ Remember — a happy kitten is an authenticated kitten!
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
      --request DELETE <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -352,7 +352,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -371,7 +371,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id="list-all-certs">List all Certs</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/certificates'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/certificates'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -395,12 +395,12 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/certificates</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/certificates</code></p>
 
 <h2 id="list-all-nodes-requests">List all Nodes Requests</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/node_request'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/node_request'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -418,18 +418,17 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/node_request</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/node_request</code></p>
 
-<h2 id="sign-reject-a-node">Sign/Reject a Node</h2>
+<h2 id="accept-node-request">Accept Node Request</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --request PUT <span class="se">\</span>
      --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
      --data-binary <span class="s2">"{
-    </span><span class="se">\"</span><span class="s2">node_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">elastic2.dnsvault.net</span><span class="se">\"</span><span class="s2">,
-    </span><span class="se">\"</span><span class="s2">node_action</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">accept</span><span class="se">\"</span><span class="s2">
+    </span><span class="se">\"</span><span class="s2">node_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">elastic2.dnsvault.net</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/node_request'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/accept'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -447,7 +446,35 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT http://www.dnsvault.net/nodes/node_request</code></p>
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/accept</code></p>
+
+<h2 id="reject-node-request">Reject Node Request</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request PUT <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">node_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">elastic2.dnsvault.net</span><span class="se">\"</span><span class="s2">
+}"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/reject'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic2.dnsvault.net"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(SHA256)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B8:FD:D2:8F:33:B1:FF:AC:5F:60:0A:DA:70:66:09:87:EA:B7:4C:14:8D:0F:4F:B0:67:60:69:83:9E:48:78:15"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint get list of node request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/reject</code></p>
 
           <h1 id="views">Views</h1>
 
@@ -456,7 +483,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>You may list collection of view using this action. Default per page is 20 views, you can specify page and per_page parameters. e.g. http://srv1.dnsvault.net:3000/api/v1/views?page=1&amp;per_page=20</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -498,12 +525,12 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views</code></p>
 
 <h2 id="get-view">Get View</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/2'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -533,7 +560,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id</code></p>
 
 <h2 id="create-view">Create View</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
@@ -545,7 +572,7 @@ Remember — a happy kitten is an authenticated kitten!
         </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
     }
 }"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -575,7 +602,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -604,7 +631,7 @@ Remember — a happy kitten is an authenticated kitten!
         </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
     }
 }"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/18'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/18'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -632,7 +659,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:id</code></p>
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -652,7 +679,7 @@ Remember — a happy kitten is an authenticated kitten!
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --request DELETE <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/2'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -679,7 +706,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id</code></p>
 
           <h1 id="view-statement">View Statement</h1>
 
@@ -687,7 +714,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>You may list collection of View Statement using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/statements'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -712,13 +739,13 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements</code></p>
 
 <h2 id="show-statement">Show Statement</h2>
 
 <p>You may view detail of a statement using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/statements/1'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements/1'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -741,7 +768,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/:id</code></p>
 
 <h2 id="create-statement">Create Statement</h2>
 
@@ -754,7 +781,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1.1.1.1</span><span class="se">\"</span><span class="s2">,
     </span><span class="se">\"</span><span class="s2">negate</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">false</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/statements'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -780,14 +807,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements</code></p>
 
 <h2 id="delete-a-statement">Delete a Statement</h2>
 
 <p>You may delete an statement using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --request DELETE <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/statements/1'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/1'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -811,7 +838,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint creates a statement.</p>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/:id</code></p>
 
 <h2 id="delete-multiple-statements">Delete multiple statements</h2>
 
@@ -821,7 +848,7 @@ Remember — a happy kitten is an authenticated kitten!
      --data-binary <span class="s2">"{
     </span><span class="se">\"</span><span class="s2">statements</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">[6,7]</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/statements/1'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/1'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -845,7 +872,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint delete multiple statement.</p>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements</code></p>
 
 <h2 id="sort-statement">Sort Statement</h2>
 
@@ -863,7 +890,7 @@ Remember — a happy kitten is an authenticated kitten!
         }
     ]
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/statements/sort'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/sort'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -887,7 +914,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint sort a statement.</p>
 
-<p><code class="prettyprint">PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/sorts</code></p>
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts</code></p>
 
 <h2 id="sort-multiple-statement">Sort multiple statement</h2>
 
@@ -905,7 +932,7 @@ Remember — a happy kitten is an authenticated kitten!
         }
     ]
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/statements/sort'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/sort'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -929,7 +956,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint sort multiple statement.</p>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/sorts</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts</code></p>
 
           <h1 id="zones">Zones</h1>
 
@@ -939,7 +966,7 @@ Remember — a happy kitten is an authenticated kitten!
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/50/zones'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1011,7 +1038,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones</code></p>
 
 <h2 id="create-zone">Create Zone</h2>
 
@@ -1024,7 +1051,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="se">\"</span><span class="s2">zone_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">labs.com.my</span><span class="se">\"</span><span class="s2">,
     </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">this is new domain</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/50/zones'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1052,14 +1079,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones</code></p>
 
 <h2 id="show-zone">Show Zone</h2>
 
 <p>You may list a zone using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/50/zones/91'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1102,14 +1129,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
 
 <h2 id="show-zone-status">Show Zone Status</h2>
 
 <p>You may list a zone using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/50/zones/91'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1152,7 +1179,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
 
 <h2 id="update-zone-status">Update Zone Status</h2>
 
@@ -1171,7 +1198,7 @@ Remember — a happy kitten is an authenticated kitten!
         </span><span class="se">\"</span><span class="s2">backend_status</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">true</span><span class="se">\"</span><span class="s2">,
         </span><span class="se">\"</span><span class="s2">serial_number</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123123123</span><span class="se">\"</span><span class="s2">,
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/50/zones/update_status'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/update_status'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1197,7 +1224,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/update_status</code></p>
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/update_status</code></p>
 
 <h2 id="delete-zone">Delete Zone</h2>
 
@@ -1206,7 +1233,7 @@ Remember — a happy kitten is an authenticated kitten!
      --request DELETE <span class="se">\</span>
      --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/50/zones/91'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'</span>
 </code></pre>
 <p>The above command returns JSON structured like this:</p>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1221,7 +1248,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id</code></p>
 
           <h1 id="zone-statement">Zone Statement</h1>
 
@@ -1229,7 +1256,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>You may list collection of Zone Statement using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/statements'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1254,13 +1281,13 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements</code></p>
 
 <h2 id="show-zone-statement">Show Zone Statement</h2>
 
 <p>You may view detail of a statement using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/statements/1'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements/1'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1283,7 +1310,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id</code></p>
 
 <h2 id="create-zone-statement">Create Zone Statement</h2>
 
@@ -1296,7 +1323,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">12.1.1.1</span><span class="se">\"</span><span class="s2">,
     </span><span class="se">\"</span><span class="s2">negate</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">false</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/statements'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1322,14 +1349,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements</code></p>
 
 <h2 id="delete-a-zone-statement">Delete a Zone Statement</h2>
 
 <p>You may delete an statement using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --request DELETE <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/zones/22/statements/1'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/22/statements/1'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1353,7 +1380,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint creates a statement.</p>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id</code></p>
 
 <h2 id="delete-multiple-zone-statements">Delete multiple zone statements</h2>
 
@@ -1363,7 +1390,7 @@ Remember — a happy kitten is an authenticated kitten!
      --data-binary <span class="s2">"{
     </span><span class="se">\"</span><span class="s2">statements</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">[6,7]</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/zones/2/statements/1'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/2/statements/1'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1387,7 +1414,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint delete multiple statement.</p>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements</code></p>
 
 <h2 id="sort-zone-statement">Sort Zone Statement</h2>
 
@@ -1405,7 +1432,7 @@ Remember — a happy kitten is an authenticated kitten!
         }
     ]
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/zones/12/statements/sort'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/12/statements/sort'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1429,7 +1456,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint sort a statement.</p>
 
-<p><code class="prettyprint">PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts</code></p>
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts</code></p>
 
 <h2 id="sort-multiple-zone-statement">Sort multiple zone statement</h2>
 
@@ -1447,7 +1474,7 @@ Remember — a happy kitten is an authenticated kitten!
         }
     ]
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/1/zones/22/statements/sort'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/22/statements/sort'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1471,7 +1498,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint sort multiple statement.</p>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts</code></p>
 
           <h1 id="records">Records</h1>
 
@@ -1480,7 +1507,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>You may list collection of zone using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-  <span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/records'</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/records'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1577,7 +1604,7 @@ Remember — a happy kitten is an authenticated kitten!
         { </span><span class="se">\"</span><span class="s2">ttl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">7200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MX</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">10 mail.server01.com.</span><span class="se">\"</span><span class="s2">}
     ]
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/records'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/records'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1628,7 +1655,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id/records</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id/records</code></p>
 
 <h2 id="create-record">Create Record</h2>
 
@@ -1646,7 +1673,7 @@ Remember — a happy kitten is an authenticated kitten!
                 </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2.2.2.2</span><span class="se">\"</span><span class="s2">
             }
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/record'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/record'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1673,7 +1700,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id/record</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id/record</code></p>
 
 <h2 id="delete-records">Delete Records</h2>
 
@@ -1690,7 +1717,7 @@ Remember — a happy kitten is an authenticated kitten!
         { </span><span class="se">\"</span><span class="s2">ttl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">7200</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MX</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">data</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">10 mail.server01.com.</span><span class="se">\"</span><span class="s2">}
     ]
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/records'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/records'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1729,7 +1756,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id/records</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id/records</code></p>
 
           <h1 id="access-control-list">Access Control List</h1>
 
@@ -1738,7 +1765,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>You may list collection of ACL using this action. Default per page is 20.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1766,14 +1793,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/acls</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls</code></p>
 
 <h2 id="show-acl">Show Acl</h2>
 
 <p>You may show an ACL using this action. </p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls/36'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1793,7 +1820,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/acls/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id</code></p>
 
 <h2 id="create-acl">Create Acl</h2>
 
@@ -1805,7 +1832,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="se">\"</span><span class="s2">acl_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">blacklist6</span><span class="se">\"</span><span class="s2">,
     </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1825,7 +1852,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/acls</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls</code></p>
 
 <h2 id="delete-acl">Delete Acl</h2>
 
@@ -1833,7 +1860,7 @@ Remember — a happy kitten is an authenticated kitten!
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --request DELETE <span class="se">\</span>
      --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls/36'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1851,7 +1878,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint creates an acl.</p>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/acls/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id</code></p>
 
           <h1 id="address-match-list">Address Match List</h1>
 
@@ -1859,7 +1886,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>You may list collection of AML using this action. Default per page is 20.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls/36/amls'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36/amls'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1904,7 +1931,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls</code></p>
 
 <h2 id="create-aml">Create Aml</h2>
 
@@ -1916,7 +1943,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="se">\"</span><span class="s2">address</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1.1.1.28</span><span class="se">\"</span><span class="s2">,
     </span><span class="se">\"</span><span class="s2">negate</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">true</span><span class="se">\"</span><span class="s2">
 }"</span> <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls/30/amls'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/30/amls'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1939,13 +1966,13 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls</code></p>
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls</code></p>
 
 <h2 id="show-aml">Show Aml</h2>
 
 <p>You may list collection of AML using this action. Default per page is 20.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls/30/amls/24'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/30/amls/24'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1966,14 +1993,14 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls/:id</code></p>
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id</code></p>
 
 <h2 id="delete-aml">Delete Aml</h2>
 
 <p>You may delete an AML using this action.</p>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --request DELETE <span class="se">\</span>
-<span class="s1">'http://www.dnsvault.net/nodes/2/dns/acls/30/amls/24'</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/30/amls/24'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1994,7 +2021,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls/:id</code></p>
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id</code></p>
 
           <h1 id="errors">Errors</h1>
 
