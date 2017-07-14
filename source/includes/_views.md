@@ -6,7 +6,7 @@ You may list collection of view using this action. Default per page is 20 views,
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views'
 ```
 
 
@@ -51,14 +51,14 @@ This endpoint get list of views.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views`
 
 ## Get View
 
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views/2'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'
 ```
 
 
@@ -91,7 +91,7 @@ This endpoint get details of a view.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
 
 ## Create View
 
@@ -105,7 +105,7 @@ curl --include \
         \"description\": \"This is for internal network\"
     }
 }" \
-  'http://www.dnsvault.net/nodes/2/dns/views'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views'
 ```
 
 
@@ -138,7 +138,7 @@ This endpoint create a views.
 
 ### HTTP Request
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/views`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views`
 
 ### URL Parameters
 
@@ -158,7 +158,7 @@ curl --include \
         \"description\": \"This is for internal network\"
     }
 }" \
-  'http://www.dnsvault.net/nodes/2/dns/views/18'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/18'
 ```
 
 
@@ -189,7 +189,7 @@ This endpoint update a views.
 
 ### HTTP Request
 
-`PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:id`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
 
 ### URL Parameters
 
@@ -203,7 +203,7 @@ description | Description Of View
 curl --include \
      --request DELETE \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views/2'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'
 ```
 
 
@@ -233,4 +233,4 @@ This endpoint delete a view.
 
 ### HTTP Request
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:id`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`

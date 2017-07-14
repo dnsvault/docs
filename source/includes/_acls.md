@@ -7,7 +7,7 @@ You may list collection of ACL using this action. Default per page is 20.
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-'http://www.dnsvault.net/nodes/2/dns/acls'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls'
 ```
 
 > The above command returns JSON structured like this:
@@ -37,7 +37,7 @@ This endpoint retrieves all acl.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/acls`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls`
 
 ## Show Acl
 
@@ -46,7 +46,7 @@ You may show an ACL using this action.
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-'http://www.dnsvault.net/nodes/2/dns/acls/36'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36'
 ```
 
 > The above command returns JSON structured like this:
@@ -68,7 +68,7 @@ This endpoint shows detail of an acl.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/acls/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`
 
 
 ## Create Acl
@@ -83,7 +83,7 @@ curl --include \
     \"acl_name\": \"blacklist6\",
     \"description\": \"This is for internal network\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/acls'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls'
 ```
 
 > The above command returns JSON structured like this:
@@ -105,7 +105,7 @@ This endpoint creates an acl.
 
 ### HTTP Request
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/acls`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls`
 
 ## Delete Acl
 
@@ -115,7 +115,7 @@ You may delete an ACL using this action.
 curl --include \
      --request DELETE \
      --header "Content-Type: application/json" \
-'http://www.dnsvault.net/nodes/2/dns/acls/36'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36'
 ```
 
 > The above command returns JSON structured like this:
@@ -135,4 +135,4 @@ curl --include \
 
 This endpoint creates an acl.
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/acls/:id`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`

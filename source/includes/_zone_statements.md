@@ -6,7 +6,7 @@ You may list collection of Zone Statement using this action.
 
 ```shell
 curl --include \
-'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/statements'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements'
 ```
 
 > The above command returns JSON structured like this:
@@ -33,7 +33,7 @@ This endpoint retrieves all statements.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
 ## Show Zone Statement
 
@@ -41,7 +41,7 @@ You may view detail of a statement using this action.
 
 ```shell
 curl --include \
-'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -66,7 +66,7 @@ This endpoint retrieves detail of a statement.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
 
 ## Create Zone Statement
 
@@ -81,7 +81,7 @@ curl --include \
     \"value\": \"12.1.1.1\",
     \"negate\": \"false\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/51/zones/1/statements'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements'
 ```
 
 > The above command returns JSON structured like this:
@@ -109,7 +109,7 @@ This endpoint creates a statement.
 
 ### HTTP Request
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
 ## Delete a Zone Statement
 
@@ -118,7 +118,7 @@ You may delete an statement using this action.
 ```shell
 curl --include \
      --request DELETE \
-'http://www.dnsvault.net/nodes/2/dns/views/1/zones/22/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/22/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -144,7 +144,7 @@ curl --include \
 
 This endpoint creates a statement.
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
 
 ## Delete multiple zone statements
 
@@ -156,7 +156,7 @@ curl --include \
      --data-binary "{
     \"statements\": \"[6,7]\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/1/zones/2/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/2/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -182,7 +182,7 @@ curl --include \
 
 This endpoint delete multiple statement.
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
 
 ## Sort Zone Statement
@@ -203,7 +203,7 @@ curl --include \
         }
     ]
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/1/zones/12/statements/sort'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/12/statements/sort'
 ```
 
 > The above command returns JSON structured like this:
@@ -229,7 +229,7 @@ curl --include \
 
 This endpoint sort a statement.
 
-`PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
 
 ## Sort multiple zone statement
 
@@ -249,7 +249,7 @@ curl --include \
         }
     ]
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/1/zones/22/statements/sort'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/22/statements/sort'
 ```
 
 > The above command returns JSON structured like this:
@@ -275,4 +275,4 @@ curl --include \
 
 This endpoint sort multiple statement.
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`

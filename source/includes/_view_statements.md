@@ -6,7 +6,7 @@ You may list collection of View Statement using this action.
 
 ```shell
 curl --include \
-'http://www.dnsvault.net/nodes/2/dns/views/51/statements'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements'
 ```
 
 > The above command returns JSON structured like this:
@@ -33,7 +33,7 @@ This endpoint retrieves all statements.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
 
 ## Show Statement
 
@@ -41,7 +41,7 @@ You may view detail of a statement using this action.
 
 ```shell
 curl --include \
-'http://www.dnsvault.net/nodes/2/dns/views/51/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -66,7 +66,7 @@ This endpoint retrieves detail of a statement.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/:id`
 
 ## Create Statement
 
@@ -82,7 +82,7 @@ curl --include \
     \"value\": \"1.1.1.1\",
     \"negate\": \"false\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/51/statements'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements'
 ```
 
 > The above command returns JSON structured like this:
@@ -110,7 +110,7 @@ This endpoint creates a statement.
 
 ### HTTP Request
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
 
 ## Delete a Statement
 
@@ -119,7 +119,7 @@ You may delete an statement using this action.
 ```shell
 curl --include \
      --request DELETE \
-'http://www.dnsvault.net/nodes/2/dns/views/1/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -145,7 +145,7 @@ curl --include \
 
 This endpoint creates a statement.
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/:id`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/:id`
 
 ## Delete multiple statements
 
@@ -157,7 +157,7 @@ curl --include \
      --data-binary "{
     \"statements\": \"[6,7]\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/1/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -183,7 +183,7 @@ curl --include \
 
 This endpoint delete multiple statement.
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
 
 ## Sort Statement
 
@@ -203,7 +203,7 @@ curl --include \
         }
     ]
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/1/statements/sort'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/sort'
 ```
 
 > The above command returns JSON structured like this:
@@ -229,7 +229,7 @@ curl --include \
 
 This endpoint sort a statement.
 
-`PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/sorts`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts`
 
 ## Sort multiple statement
 
@@ -249,7 +249,7 @@ curl --include \
         }
     ]
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/1/statements/sort'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/sort'
 ```
 
 > The above command returns JSON structured like this:
@@ -275,6 +275,6 @@ curl --include \
 
 This endpoint sort multiple statement.
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/statements/sorts`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts`
 
 

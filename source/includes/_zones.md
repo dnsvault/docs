@@ -7,7 +7,7 @@ You may list collection of zones using this action.
 curl --include \
      --header "Content-Type: application/json" \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views/50/zones'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones'
 ```
 
 > The above command returns JSON structured like this:
@@ -81,7 +81,7 @@ This endpoint get list of zones.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones`
 
 ## Create Zone
 
@@ -96,7 +96,7 @@ curl --include \
     \"zone_name\": \"labs.com.my\",
     \"description\": \"this is new domain\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/50/zones'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones'
 ```
 
 > The above command returns JSON structured like this:
@@ -126,7 +126,7 @@ This endpoint create a zone.
 
 ### HTTP Request
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones`
 
 ## Show Zone
 
@@ -135,7 +135,7 @@ You may list a zone using this action.
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views/50/zones/91'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'
 ```
 
 > The above command returns JSON structured like this:
@@ -180,7 +180,7 @@ This endpoint get list of zones.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id`
 
 ## Show Zone Status
 
@@ -189,7 +189,7 @@ You may list a zone using this action.
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views/50/zones/91'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'
 ```
 
 > The above command returns JSON structured like this:
@@ -234,7 +234,7 @@ This endpoint get list of zones.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id`
 
 ## Update Zone Status
 
@@ -255,7 +255,7 @@ curl --include \
         \"backend_status\": \"true\",
         \"serial_number\": \"123123123\",
 }" \
-'http://www.dnsvault.net/nodes/2/dns/views/50/zones/update_status'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/update_status'
 ```
 
 > The above command returns JSON structured like this:
@@ -283,7 +283,7 @@ This endpoint get list of zones.
 
 ### HTTP Request
 
-`PUT http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/update_status`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/update_status`
 
 ## Delete Zone
 
@@ -294,7 +294,7 @@ curl --include \
      --request DELETE \
      --header "Content-Type: application/json" \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/nodes/2/dns/views/50/zones/91'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'
 ```
 
  The above command returns JSON structured like this:
@@ -313,4 +313,4 @@ This endpoint delete a zone.
 
 ### HTTP Request
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/views/:view_id/zones/:id`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id`

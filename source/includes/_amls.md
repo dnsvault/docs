@@ -6,7 +6,7 @@ You may list collection of AML using this action. Default per page is 20.
 
 ```shell
 curl --include \
-'http://www.dnsvault.net/nodes/2/dns/acls/36/amls'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36/amls'
 ```
 
 > The above command returns JSON structured like this:
@@ -53,7 +53,7 @@ This endpoint retrieves all aml.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls`
 
 ## Create Aml
 
@@ -67,7 +67,7 @@ curl --include \
     \"address\": \"1.1.1.28\",
     \"negate\": \"true\"
 }" \
-'http://www.dnsvault.net/nodes/2/dns/acls/30/amls'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/30/amls'
 ```
 
 > The above command returns JSON structured like this:
@@ -92,7 +92,7 @@ This endpoint creates an aml.
 
 ### HTTP Request
 
-`POST http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls`
+`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls`
 
 ## Show Aml
 
@@ -100,7 +100,7 @@ You may list collection of AML using this action. Default per page is 20.
 
 ```shell
 curl --include \
-'http://www.dnsvault.net/nodes/2/dns/acls/30/amls/24'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/30/amls/24'
 ```
 
 > The above command returns JSON structured like this:
@@ -123,7 +123,7 @@ This endpoint retrieves an aml.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id`
 
 ## Delete Aml
 
@@ -132,7 +132,7 @@ You may delete an AML using this action.
 ```shell
 curl --include \
      --request DELETE \
-'http://www.dnsvault.net/nodes/2/dns/acls/30/amls/24'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/30/amls/24'
 ```
 
 > The above command returns JSON structured like this:
@@ -155,5 +155,5 @@ This endpoint delete an aml.
 
 ### HTTP Request
 
-`DELETE http://www.dnsvault.net/nodes/:node_id/dns/acls/:acl_id/amls/:id`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id`
 
