@@ -39,7 +39,7 @@ Remember — a happy kitten is an authenticated kitten!
 </aside>
 
 
-## Get a Specific Node
+## Get a Node
 
 
 ```shell
@@ -64,7 +64,7 @@ curl --include \
 }
 ```
 
-This endpoint retrieves a specific node.
+This endpoint retrieves a node.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
@@ -78,7 +78,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the node to retrieve
 
-## Delete a Specific Node
+## Delete a Node
 ```shell
 curl --include \
      --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
@@ -97,7 +97,7 @@ curl --include \
 }
 ```
 
-This endpoint delete a specific node.
+This endpoint delete a node.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 

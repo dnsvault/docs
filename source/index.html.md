@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - nodes
+  - options
   - views
   - view_statements
   - zones
