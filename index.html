@@ -228,7 +228,7 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the DNSVault API! You can use our API to access DNSVault API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the DNSVault API! You can use our API to access DNSVault API endpoints, which can get information on nodes, views, zones, records and others that is related to our DNSVault Appliance. </p>
 
 <p>We have language bindings in Shell! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
@@ -290,7 +290,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-<h2 id="get-a-specific-node">Get a Specific Node</h2>
+<h2 id="get-a-node">Get a Node</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
   <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2'</span>
@@ -309,7 +309,7 @@ Remember — a happy kitten is an authenticated kitten!
   </span><span class="s2">"fingerprint_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHA256"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific node.</p>
+<p>This endpoint retrieves a node.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
@@ -331,7 +331,7 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </tbody></table>
 
-<h2 id="delete-a-specific-node">Delete a Specific Node</h2>
+<h2 id="delete-a-node">Delete a Node</h2>
 <pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
      --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
      --request DELETE <span class="se">\</span>
@@ -346,7 +346,7 @@ Remember — a happy kitten is an authenticated kitten!
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint delete a specific node.</p>
+<p>This endpoint delete a node.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
@@ -475,6 +475,188 @@ Remember — a happy kitten is an authenticated kitten!
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/reject</code></p>
+
+          <h1 id="options">Options</h1>
+
+<h2 id="get-all-options">Get All Options</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/1/options'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"listen-on-ipv4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statement_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-17T05:09:45.697Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-18T04:01:35.311Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"listen-on-ipv6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statement_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-17T05:09:45.751Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-18T04:01:45.518Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all options.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/1/options</code></p>
+
+<h2 id="get-specific-option">Get Specific Option</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/1/options/3'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"listen-on-ipv4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statement_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-17T05:09:45.697Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-18T04:01:35.311Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieve details of an option.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.dnsvault.net/api/v1/nodes/1/options/3</code></p>
+
+<h2 id="create-option">Create Option</h2>
+
+<p>You may create an option using this action. It takes a JSON object containing a parameters.</p>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request POST <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">acl_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">blacklist6</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
+}"</span> <span class="se">\</span>
+<span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/options'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"acl_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blacklist6"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is for internal network"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-11T02:45:34.625Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-11T02:45:34.625Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates an option.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options</code></p>
+
+<h2 id="update-option">Update Option</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request PUT <span class="se">\</span>
+     --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     --data-binary <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">option</span><span class="se">\"</span><span class="s2">: {
+        </span><span class="se">\"</span><span class="s2">description</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">This is for internal network</span><span class="se">\"</span><span class="s2">
+    }
+}"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/options/18'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Couldn't find option with option_id 19"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"controller"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api/v1/options"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint update a options.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>description</td>
+<td>Description Of option</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-option">Delete Option</h2>
+<pre class="highlight shell tab-shell"><code>curl --include <span class="se">\</span>
+     --request DELETE <span class="se">\</span>
+     --header <span class="s2">"Authorization: Token iCDDAftiii2hzpnQMCrK2gtt"</span> <span class="se">\</span>
+  <span class="s1">'http://www.dnsvault.net/api/v1/nodes/2/dns/options/2'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Couldn't find option with option_id 10"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"controller"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api/v1/options"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"destroy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change description"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a option.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options/:id</code></p>
 
           <h1 id="views">Views</h1>
 
