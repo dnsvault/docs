@@ -5,7 +5,7 @@
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes'
 ```
 
@@ -34,9 +34,6 @@ This endpoint retrieves all nodes.
 
 `GET http://www.dnsvault.net/api/v1/nodes`
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
 
 ## Get a Node
@@ -44,7 +41,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2'
 ```
 
@@ -53,7 +50,7 @@ curl --include \
 
 ```json
 {
-  "id": 5,
+  "id": 2,
   "node_name": "elastic2.dnsvault.net",
   "description": null,
   "created_at": "2016-06-22T16:10:10.602Z",
@@ -65,8 +62,6 @@ curl --include \
 ```
 
 This endpoint retrieves a node.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
@@ -81,7 +76,7 @@ ID | The ID of the node to retrieve
 ## Delete a Node
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
      --request DELETE \
   'http://www.dnsvault.net/api/v1/nodes/2'
 ```
@@ -99,7 +94,6 @@ curl --include \
 
 This endpoint delete a node.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
@@ -115,7 +109,7 @@ ID | The ID of the node to delete
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/certificates'
 ```
 
@@ -150,7 +144,7 @@ This endpoint get list of certificates.
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/node_request'
 ```
 
@@ -181,7 +175,7 @@ This endpoint get list of node request.
 curl --include \
      --request PUT \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
      --data-binary "{
     \"node_name\": \"elastic2.dnsvault.net\"
 }" \
@@ -215,13 +209,12 @@ This endpoint get list of node request.
 curl --include \
      --request PUT \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
      --data-binary "{
     \"node_name\": \"elastic2.dnsvault.net\"
 }" \
   'http://www.dnsvault.net/api/v1/nodes/reject'
 ```
-
 
 > The above command returns JSON structured like this:
 

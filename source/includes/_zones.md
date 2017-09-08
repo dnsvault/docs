@@ -6,7 +6,7 @@ You may list collection of zones using this action.
 ```shell
 curl --include \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones'
 ```
 
@@ -83,6 +83,12 @@ This endpoint get list of zones.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the node to retrieve
+
 ## Create Zone
 
 You may create a zone using this action. It takes a JSON object containing a parameters.
@@ -91,7 +97,7 @@ You may create a zone using this action. It takes a JSON object containing a par
 curl --include \
      --request POST \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
      --data-binary "{
     \"zone_name\": \"labs.com.my\",
     \"description\": \"this is new domain\"
@@ -134,7 +140,7 @@ You may list a zone using this action.
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'
 ```
 
@@ -188,7 +194,7 @@ You may list a zone using this action.
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'
 ```
 
@@ -244,7 +250,7 @@ You may update a zone using this action.
 curl --include \
      --request PUT \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
      --data-binary "{
     \"node_name\": \"integer\",
     \"view_name\": \"internal\",
@@ -293,7 +299,7 @@ You may delete a zone using this action.
 curl --include \
      --request DELETE \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views/50/zones/91'
 ```
 

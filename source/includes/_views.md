@@ -5,7 +5,7 @@ You may list collection of view using this action. Default per page is 20 views,
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views'
 ```
 
@@ -53,11 +53,11 @@ This endpoint get list of views.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views`
 
-## Get View
+## Get a View
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'
 ```
 
@@ -92,6 +92,12 @@ This endpoint get details of a view.
 ### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Id | The ID of the views to retrieve
 
 ## Create View
 
@@ -167,22 +173,26 @@ curl --include \
 ```json
 
 {
-  "errors": {
-    "object": "view_id",
-    "reason": "Couldn't find View with view_id 19"
-  },
-  "code": 422,
-  "params": {
-    "description": "change description",
-    "controller": "api/v1/views",
-    "action": "update",
-    "node_id": "7",
-    "id": "19",
-    "view": {
-      "description": "change description"
-    }
+  "id": 18,
+  "view_name": "internal",
+  "description": "YOLO",
+  "status": true,
+  "position": 2,
+  "created_at": "2016-06-25T05:18:20.646Z",
+  "updated_at": "2016-06-25T05:18:20.646Z",
+  "node_id": 7,
+  "node": {
+    "id": 7,
+    "node_name": "elastic2.dnsvault.net",
+    "description": null,
+    "created_at": "2016-06-23T03:44:19.064Z",
+    "updated_at": "2016-06-23T03:44:19.064Z",
+    "tag": "agent",
+    "fingerprint": "83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B",
+    "fingerprint_algorithm": "SHA256"
   }
 }
+
 ```
 
 This endpoint update a views.
@@ -195,15 +205,15 @@ This endpoint update a views.
 
 Parameter | Description
 --------- | -----------
-description | Description Of View
+description | Description of a View
 
 ## Delete View
 
 ```shell
 curl --include \
      --request DELETE \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
-  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/18'
 ```
 
 
@@ -211,22 +221,26 @@ curl --include \
 
 ```json
 {
-  "errors": {
-    "object": "view_id",
-    "reason": "Couldn't find View with view_id 10"
-  },
-  "code": 422,
-  "params": {
-    "description": "change description",
-    "controller": "api/v1/views",
-    "action": "destroy",
-    "node_id": "7",
-    "id": "10",
-    "view": {
-      "description": "change description"
-    }
+  "id": 18,
+  "view_name": "internal",
+  "description": "This is for internal network",
+  "status": true,
+  "position": 2,
+  "created_at": "2016-06-25T05:18:20.646Z",
+  "updated_at": "2016-06-25T05:18:20.646Z",
+  "node_id": 7,
+  "node": {
+    "id": 7,
+    "node_name": "elastic2.dnsvault.net",
+    "description": null,
+    "created_at": "2016-06-23T03:44:19.064Z",
+    "updated_at": "2016-06-23T03:44:19.064Z",
+    "tag": "agent",
+    "fingerprint": "83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B",
+    "fingerprint_algorithm": "SHA256"
   }
 }
+
 ```
 
 This endpoint delete a view.
@@ -234,3 +248,9 @@ This endpoint delete a view.
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Id | The ID of the option to retrieve

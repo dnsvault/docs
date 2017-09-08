@@ -6,7 +6,7 @@ You may list collection of ACL using this action. Default per page is 20.
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
 'http://www.dnsvault.net/api/v1/nodes/2/dns/acls'
 ```
 
@@ -45,7 +45,7 @@ You may show an ACL using this action.
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
 'http://www.dnsvault.net/api/v1/nodes/2/dns/acls/36'
 ```
 
@@ -136,3 +136,4 @@ curl --include \
 This endpoint creates an acl.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`
+

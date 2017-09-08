@@ -5,7 +5,7 @@
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/1/options'
 ```
 
@@ -43,12 +43,12 @@ This endpoint retrieves all options.
 `GET http://www.dnsvault.net/api/v1/nodes/1/options`
 
 
-## Get Specific Option 
+## Get an Option 
 
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/1/options/3'
 ```
 
@@ -71,8 +71,13 @@ This endpoint retrieve details of an option.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/api/v1/nodes/1/options/3`
+`GET http://www.dnsvault.net/api/v1/nodes/1/options/:id`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Id | The ID of the option to retrieve
 
 ## Create Option
 
@@ -93,14 +98,14 @@ curl --include \
 
 ```json
 {
-    "id": 36,
-    "node_id": 2,
-    "acl_name": "blacklist6",
-    "description": "This is for internal network",
+    "id": 3,
+    "statement": "listen-on-ipv4",
+    "statement_value": "address",
     "status": "active",
-    "read_only": false,
-    "created_at": "2017-07-11T02:45:34.625Z",
-    "updated_at": "2017-07-11T02:45:34.625Z"
+    "category": null,
+    "description": null,
+    "created_at": "2017-08-17T05:09:45.697Z",
+    "updated_at": "2017-08-18T04:01:35.311Z"
 }
 ```
 
@@ -110,6 +115,12 @@ This endpoint creates an option.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options`
 
+### Required Arguments
+
+Parameter | Description
+--------- | -----------
+statement | Name of a statement, such as 'listen-on-ipv4'
+statement_value | Value of a statement, such as 'address'
 
 ## Update Option
 
@@ -129,23 +140,15 @@ curl --include \
 > The above command returns JSON structured like this:
 
 ```json
-
 {
-  "errors": {
-    "object": "option_id",
-    "reason": "Couldn't find option with option_id 19"
-  },
-  "code": 422,
-  "params": {
-    "description": "change description",
-    "controller": "api/v1/options",
-    "action": "update",
-    "node_id": "7",
-    "id": "19",
-    "option": {
-      "description": "change description"
-    }
-  }
+    "id": 3,
+    "statement": "listen-on-ipv4",
+    "statement_value": "address",
+    "status": "active",
+    "category": null,
+    "description": null,
+    "created_at": "2017-08-17T05:09:45.697Z",
+    "updated_at": "2017-08-18T04:01:35.311Z"
 }
 ```
 
@@ -155,18 +158,19 @@ This endpoint update a options.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options/:id`
 
-### URL Parameters
+### Required Arguments
 
 Parameter | Description
 --------- | -----------
-description | Description Of option
+statement | Name of a statement, such as 'listen-on-ipv4'
+statement_value | Value of a statement, such as 'address'
 
 ## Delete Option
 
 ```shell
 curl --include \
      --request DELETE \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/options/2'
 ```
 
@@ -175,21 +179,14 @@ curl --include \
 
 ```json
 {
-  "errors": {
-    "object": "option_id",
-    "reason": "Couldn't find option with option_id 10"
-  },
-  "code": 422,
-  "params": {
-    "description": "change description",
-    "controller": "api/v1/options",
-    "action": "destroy",
-    "node_id": "7",
-    "id": "10",
-    "option": {
-      "description": "change description"
-    }
-  }
+    "id": 3,
+    "statement": "listen-on-ipv4",
+    "statement_value": "address",
+    "status": "active",
+    "category": null,
+    "description": null,
+    "created_at": "2017-08-17T05:09:45.697Z",
+    "updated_at": "2017-08-18T04:01:35.311Z"
 }
 ```
 
@@ -199,4 +196,8 @@ This endpoint delete a option.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options/:id`
 
+### URL Parameters
 
+Parameter | Description
+--------- | -----------
+Id | The ID of the option to delete

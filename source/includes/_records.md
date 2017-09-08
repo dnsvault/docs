@@ -6,7 +6,7 @@ You may list collection of zone using this action.
 
 ```shell
 curl --include \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
   'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/records'
 ```
 
@@ -173,7 +173,7 @@ You may create one records for a host. After create you can check using dig tool
 curl --include \
      --request POST \
      --header "Content-Type: application/json" \
-     --header "Authorization: Token iCDDAftiii2hzpnQMCrK2gtt" \
+     --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
      --data-binary "{
     \"host\": \"sample1\",
     \"record\": 
