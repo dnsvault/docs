@@ -276,4 +276,4 @@ This endpoint delete a view.
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the view's node to retrieve
-Id | The ID of the view to retrieve
+Id | The ID of the view to delete

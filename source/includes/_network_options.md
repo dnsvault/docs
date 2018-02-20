@@ -52,6 +52,12 @@ This endpoint retrieves all Network Options.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/options`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network option's node to retrieve
+
 ## Show Network Options
 
 You may list collection of Network Options using this action. Default per page is 20.
@@ -81,6 +87,13 @@ This endpoint retrieves an Network Options.
 ### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/options/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network option's node to retrieve
+Id | The ID of the network option to retrieve
 
 ## Update Network Options
 
@@ -118,3 +131,15 @@ This endpoint update a Network Options.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/options/:id`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network option's node to retrieve
+Id | The ID of the network option to retrieve
+
+#### Required Parameters
+
+Parameter | Description
+--------- | -----------
+statement_value | The statement value of the network option

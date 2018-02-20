@@ -182,7 +182,7 @@ Parameter | Description
 --------- | -----------
 Node_id | The ID of the view statement's node to retrieve
 View_id | The ID of the view statement's view to retrieve
-Id | The ID of the view statement to retrieve
+Id | The ID of the view statement to delete
 
 ## Delete multiple statements
 
@@ -221,6 +221,14 @@ curl --include \
 This endpoint delete multiple statement.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to delete
+View_id | The ID of the view statement's view to delete
+
 
 ## Sort Statement
 

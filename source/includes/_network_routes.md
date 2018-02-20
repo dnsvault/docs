@@ -1,4 +1,4 @@
-# Network Routes
+# Network Routes (create & update)
 
 ## List all Routes
 
@@ -64,7 +64,13 @@ This endpoint retrieves all Network Routes.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes`
 
-## Create Network Routes
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network route's node to retrieve
+
+## Create Network Routes (required params)
 
 You may create a Network Routes using this action. It takes a JSON object containing a parameters.
 
@@ -110,6 +116,12 @@ This endpoint creates an Network Routes
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network route's node to retrieve
+
 ## Show Network Routes
 
 You may list collection of Network Routes using this action. Default per page is 20.
@@ -144,7 +156,14 @@ This endpoint retrieves an Network Routes.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes/:id`
 
-## Update Network Routes
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network route's node to retrieve
+Id | The ID of the network route to retrieve
+
+## Update Network Routes (required params)
 
 ```shell
 curl --include \
@@ -191,6 +210,14 @@ This endpoint update a Network Routes.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes/:interface_id/aliases/:id`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network route's node to retrieve
+Interface_id | The ID of the network route's node to retrieve
+Id | The ID of the network route to retrieve
+
 ## Delete Network Routes
 
 ```shell
@@ -225,3 +252,11 @@ This endpoint delete a Network Routes.
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network route's node to retrieve
+Interface_id | The ID of the network route's node to retrieve
+Id | The ID of the network route to delete

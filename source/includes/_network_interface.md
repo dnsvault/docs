@@ -1,4 +1,4 @@
-# Network Interface
+# Network Interface (update)
 
 ## List all Interface
 
@@ -55,6 +55,12 @@ This endpoint retrieves all Network Interface.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+
 ## Show Network Interface
 
 You may list collection of Network Interface using this action. Default per page is 20.
@@ -86,7 +92,14 @@ This endpoint retrieves an Network Interface.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:id`
 
-## Update Network Interface
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Id | The ID of the network interface to retrieve
+
+## Update Network Interface (required param)
 
 ```shell
 curl --include \
@@ -127,4 +140,11 @@ This endpoint update a Network Interface.
 ### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Id | The ID of the network interface to delete
 

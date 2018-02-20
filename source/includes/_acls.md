@@ -39,6 +39,12 @@ This endpoint retrieves all acl.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the acl's node to retrieve
+
 ## Show Acl
 
 You may show an ACL using this action. 
@@ -70,6 +76,12 @@ This endpoint shows detail of an acl.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the acl's node to retrieve
+Id | The ID of the acl to retrieve
 
 ## Create Acl
 
@@ -107,6 +119,19 @@ This endpoint creates an acl.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the acl's node to retrieve
+
+#### Required Parameters
+
+Parameter | Description
+--------- | -----------
+acl_name | Name of acl
+description | The description of acl
+
 ## Delete Acl
 
 You may delete an ACL using this action.
@@ -136,4 +161,11 @@ curl --include \
 This endpoint creates an acl.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view's node to retrieve
+Id | The ID of the view to delete
 

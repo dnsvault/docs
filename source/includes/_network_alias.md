@@ -1,4 +1,4 @@
-# Network Alias
+# Network Alias (create & update)
 
 ## List all Alias
 
@@ -58,7 +58,14 @@ This endpoint retrieves all Network Alias.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases`
 
-## Create Network Alias
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Interface_id | The ID of the network interface's node to retrieve
+
+## Create Network Alias (required params)
 
 You may create a Network Alias using this action. It takes a JSON object containing a parameters.
 
@@ -96,9 +103,12 @@ curl --include \
 
 This endpoint creates an Network Alias
 
-### HTTP Request
+#### URL Parameters
 
-`POST http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases`
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Interface_id | The ID of the network interface's node to retrieve
 
 ## Show Network Alias
 
@@ -132,7 +142,15 @@ This endpoint retrieves an Network Alias.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases/:id`
 
-## Update Network Alias
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Interface_id | The ID of the network interface's node to retrieve
+Id | The ID of the network interface to retrieve
+
+## Update Network Alias (required params)
 
 ```shell
 curl --include \
@@ -175,6 +193,14 @@ This endpoint update a Network Alias.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases/:id`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Interface_id | The ID of the network interface's node to retrieve
+Id | The ID of the network interface to retrieve
+
 ## Delete Network Alias
 
 ```shell
@@ -207,3 +233,11 @@ This endpoint delete a Network Alias.
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network interface's node to retrieve
+Interface_id | The ID of the network interface's node to retrieve
+Id | The ID of the network interface to delete

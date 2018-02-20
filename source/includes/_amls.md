@@ -55,6 +55,13 @@ This endpoint retrieves all aml.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the aml's node to retrieve
+acl_id | The ID of the aml's acl to retrieve
+
 ## Create Aml
 
 You may create a AML using this action. It takes a JSON object containing a parameters.
@@ -94,6 +101,20 @@ This endpoint creates an aml.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the aml's node to retrieve
+acl_id | The ID of the aml's acl to retrieve
+
+#### Required Parameters
+
+Parameter | Description
+--------- | -----------
+address | The address of aml
+negate | True or False
+
 ## Show Aml
 
 You may list collection of AML using this action. Default per page is 20.
@@ -124,6 +145,14 @@ This endpoint retrieves an aml.
 ### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the aml's node to retrieve
+acl_id | The ID of the aml's acl to retrieve
+Id | The ID of aml to retrieve
 
 ## Delete Aml
 
@@ -156,4 +185,12 @@ This endpoint delete an aml.
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the aml's node to retrieve
+acl_id | The ID of the aml's acl to retrieve
+Id | The ID of aml to delete
 

@@ -186,7 +186,7 @@ Parameter | Description
 Node_id | The ID of the zone statement's node to retrieve
 View_id | The ID of the zone statement's view to retrieve
 Zone_id | The ID of the zone statement's zone to retrieve
-Id | The ID of the zone statement to retrieve
+Id | The ID of the zone statement to delete
 
 ## Delete multiple zone statements
 

@@ -1,4 +1,4 @@
-# Records
+# Records (create & delete)
 
 ## List all Records
 
@@ -232,9 +232,7 @@ Parameter | Description
 type | The ID of the zone statement's node to retrieve
 ttl | The ID of the zone statement's view to retrieve
 
-
-
-## Delete Records
+## Delete Records (pending)
 
 ## Delete Record
 You may delete records of host using this action. For testing you can use dig tool example: dig @srv1.dnsvault.net sample1.test05.my any
@@ -292,4 +290,13 @@ This endpoint create a record.
 
 ### HTTP Request
 
-`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id/records`
+`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/records/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
+id | The ID of the zone to delete

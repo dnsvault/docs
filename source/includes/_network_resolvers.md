@@ -1,4 +1,4 @@
-# Network Resolvers 
+# Network Resolvers (create & update)
 
 ## List all Resolvers
 
@@ -38,6 +38,12 @@ This endpoint retrieves all Network Resolvers.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/resolvers`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network resolver's node to retrieve
+
 ## Create Network Resolvers
 
 You may create a Network Resolvers using this action. It takes a JSON object containing a parameters.
@@ -74,6 +80,12 @@ This endpoint creates an Network Resolvers
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/network/resolvers`
 
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network resolvers's node to retrieve
+
 ## Show Network Resolvers
 
 You may list collection of Network Resolvers using this action. Default per page is 20.
@@ -103,6 +115,13 @@ This endpoint retrieves an Network Resolvers.
 ### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/resolvers/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network resolver's node to retrieve
+Id | The ID of the network resolver to retrieve
 
 ## Update Network Resolvers
 
@@ -139,7 +158,14 @@ This endpoint update a Network Resolvers.
 
 ### HTTP Request
 
-`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/resolvers/:interface_id/aliases/:id`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/resolvers/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network resolver's node to retrieve
+Id | The ID of the network resolver to retrieve
 
 ## Delete Network Resolvers
 
@@ -171,3 +197,10 @@ This endpoint delete a Network Resolvers.
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/network/resolvers/:id`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the network resolver's node to retrieve
+Id | The ID of the network resolver to retrieve

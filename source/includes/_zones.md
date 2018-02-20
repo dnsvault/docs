@@ -365,4 +365,4 @@ Parameter | Description
 --------- | -----------
 Node_id | The ID of the zone's node to retrieve
 View_id | The ID of the zone's view to retrieve
-Id | The ID of the zone to retrieve
+Id | The ID of the zone to delete
