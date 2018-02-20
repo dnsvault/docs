@@ -71,7 +71,7 @@ This endpoint retrieves a node.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the node to retrieve
+ID | The id of the node to retrieve
 
 ## Delete a Node
 ```shell

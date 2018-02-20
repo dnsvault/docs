@@ -18,6 +18,12 @@ includes:
   - records
   - acls
   - amls
+  - network_options
+  - network_interface
+  - network_alias
+  - network_routes
+  - network_vlans
+  - network_resolvers
   - errors
 
 search: true
@@ -25,7 +31,7 @@ search: true
 
 # Introduction
 
-Welcome to the DNSVault API! You can use our API to access DNSVault API endpoints, which can get information on nodes, views, zones, records and others that is related to our DNSVault Appliance. 
+Welcome to the DNSVault API! You can use our API to access DNSVault API endpoints, which can get information on nodes, views, zones, records and others that is related to our DNSVault Appliance.
 
 We have language bindings in Shell! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
