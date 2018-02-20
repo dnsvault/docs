@@ -40,7 +40,13 @@ This endpoint retrieves all options.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/api/v1/nodes/1/options`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/options`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the option's node to retrieve
 
 
 ## Get an Option 
@@ -71,12 +77,13 @@ This endpoint retrieve details of an option.
 
 ### HTTP Request
 
-`GET http://www.dnsvault.net/api/v1/nodes/1/options/:id`
+`GET http://www.dnsvault.net/api/v1/nodes/:node_id/options/:id`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
+Node_id | The ID of the option's node to retrieve
 Id | The ID of the option to retrieve
 
 ## Create Option
@@ -114,6 +121,12 @@ This endpoint creates an option.
 ### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the option's node to retrieve
 
 ### Required Arguments
 
@@ -158,6 +171,13 @@ This endpoint update a options.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/options/:id`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the option's node to retrieve
+Id | The ID of the option to retrieve
+
 ### Required Arguments
 
 Parameter | Description
@@ -200,4 +220,5 @@ This endpoint delete a option.
 
 Parameter | Description
 --------- | -----------
+Node_id | The ID of the option's node to retrieve
 Id | The ID of the option to delete

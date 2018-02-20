@@ -35,6 +35,13 @@ This endpoint retrieves all statements.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to retrieve
+View_id | The ID of the view statement's view to retrieve
+
 ## Show Statement
 
 You may view detail of a statement using this action.
@@ -68,8 +75,15 @@ This endpoint retrieves detail of a statement.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/:id`
 
-## Create Statement
+### URL Parameters
 
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to retrieve
+View_id | The ID of the view statement's view to retrieve
+Id | The ID of the view statement to retrieve
+
+## Create Statement
 
 You may create a statement using this action. It takes a JSON object containing a parameters.
 
@@ -112,6 +126,21 @@ This endpoint creates a statement.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to retrieve
+View_id | The ID of the view statement's view to retrieve
+
+### Required Parameters
+
+Parameter | Description
+--------- | -----------
+type | Type of the value
+value | Value for the type
+negate | True or false
+
 ## Delete a Statement
 
 You may delete an statement using this action.
@@ -146,6 +175,14 @@ curl --include \
 This endpoint creates a statement.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to retrieve
+View_id | The ID of the view statement's view to retrieve
+Id | The ID of the view statement to retrieve
 
 ## Delete multiple statements
 
@@ -231,6 +268,13 @@ This endpoint sort a statement.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to retrieve
+View_id | The ID of the view statement's view to retrieve
+
 ## Sort multiple statement
 
 You may sort statements using this action.
@@ -276,5 +320,12 @@ curl --include \
 This endpoint sort multiple statement.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view statement's node to retrieve
+View_id | The ID of the view statement's view to retrieve
 
 

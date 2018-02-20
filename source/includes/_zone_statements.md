@@ -35,6 +35,14 @@ This endpoint retrieves all statements.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
+
 ## Show Zone Statement
 
 You may view detail of a statement using this action.
@@ -67,6 +75,15 @@ This endpoint retrieves detail of a statement.
 ### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
+Id | The ID of the zone statement to retrieve
 
 ## Create Zone Statement
 
@@ -111,6 +128,22 @@ This endpoint creates a statement.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
+
+### Required Parameters
+
+Parameter | Description
+--------- | -----------
+type | Type of the value
+value | Value for the type
+negate | True or false
+
 ## Delete a Zone Statement
 
 You may delete an statement using this action.
@@ -145,6 +178,15 @@ curl --include \
 This endpoint creates a statement.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
+Id | The ID of the zone statement to retrieve
 
 ## Delete multiple zone statements
 
@@ -183,6 +225,14 @@ curl --include \
 This endpoint delete multiple statement.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
 
 
 ## Sort Zone Statement
@@ -231,6 +281,14 @@ This endpoint sort a statement.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve
+
 ## Sort multiple zone statement
 
 You may sort statements using this action.
@@ -276,3 +334,11 @@ curl --include \
 This endpoint sort multiple statement.
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone statement's node to retrieve
+View_id | The ID of the zone statement's view to retrieve
+Zone_id | The ID of the zone statement's zone to retrieve

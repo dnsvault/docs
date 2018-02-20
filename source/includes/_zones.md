@@ -1,4 +1,4 @@
-# Zones
+# Zones (show status)
 
 ## List all Zones
 You may list collection of zones using this action.
@@ -87,7 +87,8 @@ This endpoint get list of zones.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the node to retrieve
+Node_id | The ID of the zone's node to retrieve
+View_id | The ID of the zone's view to retrieve
 
 ## Create Zone
 
@@ -133,6 +134,20 @@ This endpoint create a zone.
 ### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone's node to retrieve
+View_id | The ID of the zone's view to retrieve
+
+### Required Parameters
+
+Parameter | Description
+--------- | -----------
+Zone_name | The Zone name
+Description | The description of the zone name
 
 ## Show Zone
 
@@ -188,7 +203,15 @@ This endpoint get list of zones.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id`
 
-## Show Zone Status
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone's node to retrieve
+View_id | The ID of the zone's view to retrieve
+Id | The ID of the zone to retrieve
+
+## Show Zone Status (== show)
 
 You may list a zone using this action.
 
@@ -242,6 +265,14 @@ This endpoint get list of zones.
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone's node to retrieve
+View_id | The ID of the zone's view to retrieve
+Id | The ID of the zone to retrieve
+
 ## Update Zone Status
 
 You may update a zone using this action.
@@ -291,6 +322,13 @@ This endpoint get list of zones.
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/update_status`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone's node to retrieve
+View_id | The ID of the zone's view to retrieve
+
 ## Delete Zone
 
 You may delete a zone using this action.
@@ -320,3 +358,11 @@ This endpoint delete a zone.
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:id`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the zone's node to retrieve
+View_id | The ID of the zone's view to retrieve
+Id | The ID of the zone to retrieve

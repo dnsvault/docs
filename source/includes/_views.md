@@ -1,6 +1,8 @@
-# Views
+# DNS
 
-## Get All Views
+## Views
+
+### Get All Views
 You may list collection of view using this action. Default per page is 20 views, you can specify page and per_page parameters. e.g. http://srv1.dnsvault.net:3000/api/v1/views?page=1&per_page=20
 
 ```shell
@@ -49,11 +51,17 @@ curl --include \
 
 This endpoint get list of views.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views`
 
-## Get a View
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view's node to retrieve
+
+### Get a View
 
 ```shell
 curl --include \
@@ -89,17 +97,18 @@ curl --include \
 
 This endpoint get details of a view.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
+Node_id | The ID of the view's node to retrieve
 Id | The ID of the views to retrieve
 
-## Create View
+### Create View
 
 ```shell
 curl --include \
@@ -142,18 +151,24 @@ curl --include \
 
 This endpoint create a views.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views`
 
-### URL Parameters
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view's node to retrieve
+
+#### Required Parameters
 
 Parameter | Description
 --------- | -----------
 view_name | View Name
 description | Description Of View
 
-## Update View
+### Update View
 
 ```shell
 curl --include \
@@ -197,17 +212,24 @@ curl --include \
 
 This endpoint update a views.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
 
-### URL Parameters
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the view's node to retrieve
+Id | The ID of the view to retrieve
+
+#### Required Parameters
 
 Parameter | Description
 --------- | -----------
 description | Description of a View
 
-## Delete View
+### Delete View
 
 ```shell
 curl --include \
@@ -245,12 +267,13 @@ curl --include \
 
 This endpoint delete a view.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
-Id | The ID of the option to retrieve
+Node_id | The ID of the view's node to retrieve
+Id | The ID of the view to retrieve

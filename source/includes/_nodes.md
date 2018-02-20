@@ -34,7 +34,11 @@ This endpoint retrieves all nodes.
 
 `GET http://www.dnsvault.net/api/v1/nodes`
 
+### URL Parameters
 
+Parameter | Description
+--------- | -----------
+Id | The ID of the node to retrieve
 
 ## Get a Node
 
@@ -71,7 +75,7 @@ This endpoint retrieves a node.
 
 Parameter | Description
 --------- | -----------
-ID | The id of the node to retrieve
+Id | The ID of the node to retrieve
 
 ## Delete a Node
 ```shell
@@ -94,7 +98,6 @@ curl --include \
 
 This endpoint delete a node.
 
-
 ### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:id`
@@ -103,7 +106,7 @@ This endpoint delete a node.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the node to delete
+Id | The ID of the node to delete
 
 ## List all Certs
 
@@ -139,7 +142,6 @@ This endpoint get list of certificates.
 
 `GET http://www.dnsvault.net/api/v1/nodes/certificates`
 
-
 ## List all Nodes Requests
 
 ```shell
@@ -167,7 +169,6 @@ This endpoint get list of node request.
 ### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/node_request`
-
 
 ## Accept Node Request
 
