@@ -1,5 +1,3 @@
-# DNS
-
 ## Views
 
 ### Get All Views

@@ -1,6 +1,6 @@
-# Network Alias (create & update)
+## Network Alias (create & update)
 
-## List all Alias
+### List all Alias
 
 You may list collection of Network Alias using this action. Default per page is 20.
 
@@ -54,18 +54,18 @@ curl --include \
 
 This endpoint retrieves all Network Alias.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network interface's node to retrieve
 Interface_id | The ID of the network interface's node to retrieve
 
-## Create Network Alias (required params)
+### Create Network Alias (required params)
 
 You may create a Network Alias using this action. It takes a JSON object containing a parameters.
 
@@ -103,14 +103,14 @@ curl --include \
 
 This endpoint creates an Network Alias
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network interface's node to retrieve
 Interface_id | The ID of the network interface's node to retrieve
 
-## Show Network Alias
+### Show Network Alias
 
 You may list collection of Network Alias using this action. Default per page is 20.
 
@@ -138,11 +138,11 @@ curl --include \
 
 This endpoint retrieves an Network Alias.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -150,7 +150,7 @@ Node_id | The ID of the network interface's node to retrieve
 Interface_id | The ID of the network interface's node to retrieve
 Id | The ID of the network interface to retrieve
 
-## Update Network Alias (required params)
+### Update Network Alias (required params)
 
 ```shell
 curl --include \
@@ -189,7 +189,7 @@ curl --include \
 
 This endpoint update a Network Alias.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases/:id`
 
@@ -201,7 +201,7 @@ Node_id | The ID of the network interface's node to retrieve
 Interface_id | The ID of the network interface's node to retrieve
 Id | The ID of the network interface to retrieve
 
-## Delete Network Alias
+### Delete Network Alias
 
 ```shell
 curl --include \
@@ -230,11 +230,11 @@ curl --include \
 
 This endpoint delete a Network Alias.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/network/interfaces/:interface_id/aliases/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------

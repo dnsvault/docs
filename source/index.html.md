@@ -11,20 +11,8 @@ toc_footers:
 includes:
   - nodes
   - options
-  - views
-  - view_statements
-  - zones
-  - zone_statements
-  - records
-  - acls
-  - amls
-  - network_options
-  - network_interface
-  - network_alias
-  - network_routes
-  - network_vlans
-  - network_resolvers
-  - errors
+  - dns.md.erb
+  - network.md.erb
 
 search: true
 ---
