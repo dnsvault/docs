@@ -1,6 +1,6 @@
-# Network Vlans (create & update)
+## Vlans (create & update)
 
-## List all Vlans
+### List all Vlans
 
 You may list collection of Network Vlans using this action. Default per page is 20.
 
@@ -36,17 +36,17 @@ curl --include \
 
 This endpoint retrieves all Network Vlans.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/vlans`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network vlan's node to retrieve
 
-## Create Network Vlans
+### Create Network Vlans
 
 You may create a Network Vlans using this action. It takes a JSON object containing a parameters.
 
@@ -89,17 +89,17 @@ curl --include \
 
 This endpoint creates an Network Vlans
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/network/vlans`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network vlan's node to retrieve
 
-## Show Network Vlans
+### Show Network Vlans
 
 You may list collection of Network Vlans using this action. Default per page is 20.
 
@@ -133,18 +133,18 @@ curl --include \
 
 This endpoint retrieves an Network Vlans.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/vlans/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network vlan's node to retrieve
 Id | The ID of the network vlan to retrieve
 
-## Update Network Vlans
+### Update Network Vlans
 
 ```shell
 curl --include \
@@ -188,18 +188,18 @@ curl --include \
 
 This endpoint update a Network Vlans.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/vlans/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network vlan's node to retrieve
 Id | The ID of the network vlan to retrieve
 
-## Delete Network Vlans
+### Delete Network Vlans
 
 ```shell
 curl --include \
@@ -234,11 +234,11 @@ curl --include \
 
 This endpoint delete a Network Vlans.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/network/vlans/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------

@@ -1,4 +1,4 @@
-## Network Alias (create & update)
+## Alias (create & update)
 
 ### List all Alias
 

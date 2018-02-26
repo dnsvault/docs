@@ -1,6 +1,6 @@
-# Network Routes (create & update)
+## Routes (create & update)
 
-## List all Routes
+### List all Routes
 
 You may list collection of Network Routes using this action. Default per page is 20.
 
@@ -60,17 +60,17 @@ curl --include \
 
 This endpoint retrieves all Network Routes.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network route's node to retrieve
 
-## Create Network Routes (required params)
+### Create Network Routes (required params)
 
 You may create a Network Routes using this action. It takes a JSON object containing a parameters.
 
@@ -112,17 +112,17 @@ curl --include \
 
 This endpoint creates an Network Routes
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network route's node to retrieve
 
-## Show Network Routes
+### Show Network Routes
 
 You may list collection of Network Routes using this action. Default per page is 20.
 
@@ -152,18 +152,18 @@ curl --include \
 
 This endpoint retrieves an Network Routes.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network route's node to retrieve
 Id | The ID of the network route to retrieve
 
-## Update Network Routes (required params)
+### Update Network Routes (required params)
 
 ```shell
 curl --include \
@@ -206,11 +206,11 @@ curl --include \
 
 This endpoint update a Network Routes.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes/:interface_id/aliases/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -218,7 +218,7 @@ Node_id | The ID of the network route's node to retrieve
 Interface_id | The ID of the network route's node to retrieve
 Id | The ID of the network route to retrieve
 
-## Delete Network Routes
+### Delete Network Routes
 
 ```shell
 curl --include \
@@ -249,11 +249,11 @@ curl --include \
 
 This endpoint delete a Network Routes.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/network/routes/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------

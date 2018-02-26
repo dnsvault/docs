@@ -30,11 +30,11 @@ curl --include \
 
 This endpoint retrieves all nodes.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -67,11 +67,11 @@ curl --include \
 
 This endpoint retrieves a node.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -98,11 +98,11 @@ curl --include \
 
 This endpoint delete a node.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -138,7 +138,7 @@ curl --include \
 
 This endpoint get list of certificates.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/certificates`
 
@@ -166,7 +166,7 @@ curl --include \
 
 This endpoint get list of node request.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/node_request`
 
@@ -199,7 +199,7 @@ curl --include \
 
 This endpoint get list of node request.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/accept`
 
@@ -232,6 +232,6 @@ curl --include \
 
 This endpoint get list of node request.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/reject`

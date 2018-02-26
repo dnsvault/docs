@@ -1,6 +1,6 @@
-# Access Control List
+## Access Control List
 
-## List all Acls
+### List all Acls
 
 You may list collection of ACL using this action. Default per page is 20.
 
@@ -35,17 +35,17 @@ curl --include \
 
 This endpoint retrieves all acl.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the acl's node to retrieve
 
-## Show Acl
+### Show Acl
 
 You may show an ACL using this action. 
 
@@ -72,18 +72,18 @@ curl --include \
 
 This endpoint shows detail of an acl.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the acl's node to retrieve
 Id | The ID of the acl to retrieve
 
-## Create Acl
+### Create Acl
 
 You may create a ACL using this action. It takes a JSON object containing a parameters.
 
@@ -115,24 +115,24 @@ curl --include \
 
 This endpoint creates an acl.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the acl's node to retrieve
 
-#### Required Parameters
+##### Required Parameters
 
 Parameter | Description
 --------- | -----------
 acl_name | Name of acl
 description | The description of acl
 
-## Delete Acl
+### Delete Acl
 
 You may delete an ACL using this action.
 
@@ -162,7 +162,7 @@ This endpoint creates an acl.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------

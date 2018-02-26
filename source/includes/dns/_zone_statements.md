@@ -1,6 +1,6 @@
-# Zone Statement
+## Zone Statement
 
-## List all Zone Statement
+### List all Zone Statement
 
 You may list collection of Zone Statement using this action.
 
@@ -31,11 +31,11 @@ curl --include \
 
 This endpoint retrieves all statements.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -43,7 +43,7 @@ Node_id | The ID of the zone statement's node to retrieve
 View_id | The ID of the zone statement's view to retrieve
 Zone_id | The ID of the zone statement's zone to retrieve
 
-## Show Zone Statement
+### Show Zone Statement
 
 You may view detail of a statement using this action.
 
@@ -72,11 +72,11 @@ curl --include \
 
 This endpoint retrieves detail of a statement.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -85,7 +85,7 @@ View_id | The ID of the zone statement's view to retrieve
 Zone_id | The ID of the zone statement's zone to retrieve
 Id | The ID of the zone statement to retrieve
 
-## Create Zone Statement
+### Create Zone Statement
 
 You may create a statement using this action. It takes a JSON object containing a parameters.
 
@@ -94,9 +94,9 @@ curl --include \
      --request POST \
      --header "Content-Type: application/json" \
      --data-binary "{
-    \"type\": \"ip_address\",
-    \"value\": \"12.1.1.1\",
-    \"negate\": \"false\"
+    \"statement\": \"match-clients\",
+    \"value_type\": \"ip_address\",
+    \"value\": \"12.1.1.1\"
 }" \
 'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements'
 ```
@@ -105,30 +105,27 @@ curl --include \
 
 ```json
 {
-    "id": 5,
-    "node_id": 2,
-    "statementable_id": 52,
-    "statementable_type": "Dns::Zone",
-    "statement": "allow-query",
-    "position": 0,
+    "id": 2,
+    "statement": "match-clients",
+    "negate": false,
+    "position": 1,
     "value_type": "ip_address",
     "value": "12.1.1.1",
-    "port": 53,
-    "negate": false,
     "status": "active",
+    "port": 53,
     "read_only": false,
-    "created_at": "2017-07-11T08:54:25.603Z",
-    "updated_at": "2017-07-11T08:54:25.603Z"
+    "created_at": "2017-07-11T03:50:18.530Z",
+    "updated_at": "2017-07-11T03:50:18.530Z"
 }
 ```
 
 This endpoint creates a statement.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -136,39 +133,49 @@ Node_id | The ID of the zone statement's node to retrieve
 View_id | The ID of the zone statement's view to retrieve
 Zone_id | The ID of the zone statement's zone to retrieve
 
-### Required Parameters
+#### Required Parameters
 
 Parameter | Description
 --------- | -----------
-type | Type of the value
-value | Value for the type
-negate | True or false
+Statement |Name of the Statement
+Value_type | Value type of the statement
+Value | value of the statement
 
-## Delete a Zone Statement
+
+Statement | Value_type | Value
+--------- | ---------- | -----
+allow-transfer | ip_address | IP Address value
+ | key | Key Value
+ | acl | ACL name Value
+allow-transfer | ip_address | IP Address value
+ | acl | ACL name Value
+allow-update | ip_address | IP Address value
+ | key | Key Value
+allow-notify | ip_address | IP Address value
+allow-source | ip_address | IP Address value
+
+### Delete a Zone Statement
 
 You may delete an statement using this action.
 
 ```shell
 curl --include \
      --request DELETE \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/22/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/22/statements/2'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
+    "id": 2,
     "statement": "match-clients",
-    "position": 0,
-    "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
     "negate": false,
+    "position": 1,
+    "value_type": "ip_address",
+    "value": "12.1.1.1",
     "status": "active",
+    "port": 53,
     "read_only": false,
     "created_at": "2017-07-11T03:50:18.530Z",
     "updated_at": "2017-07-11T03:50:18.530Z"
@@ -179,7 +186,7 @@ This endpoint creates a statement.
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -188,54 +195,7 @@ View_id | The ID of the zone statement's view to retrieve
 Zone_id | The ID of the zone statement's zone to retrieve
 Id | The ID of the zone statement to delete
 
-## Delete multiple zone statements
-
-You may delete multiple statements using this action.
-
-```shell
-curl --include \
-     --request DELETE \
-     --data-binary "{
-    \"statements\": \"[6,7]\"
-}" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/2/statements/1'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
-    "statement": "match-clients",
-    "position": 0,
-    "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
-    "status": "active",
-    "read_only": false,
-    "created_at": "2017-07-11T03:50:18.530Z",
-    "updated_at": "2017-07-11T03:50:18.530Z"
-}]
-```
-
-This endpoint delete multiple statement.
-
-`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Node_id | The ID of the zone statement's node to retrieve
-View_id | The ID of the zone statement's view to retrieve
-Zone_id | The ID of the zone statement's zone to retrieve
-
-
-## Sort Zone Statement
+### Sort Zone Statement
 
 You may sort statements using this action.
 
@@ -244,98 +204,48 @@ curl --include \
      --request PUT \
      --header "Content-Type: application/json" \
      --data-binary "{
-    \"statement\": [
-        {
-             \"statement_id\": 3
-        },
-        {
-             \"position\": 0 
-        }
-    ]
+    \"id\": \"2\",
+    \"position\" : \"0\"
 }" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/12/statements/sort'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/statements/sort'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[{
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
+{
+    "id": 2,
     "statement": "match-clients",
+    "negate": false,
     "position": 0,
     "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
+    "value": "12.1.1.1",
     "status": "active",
+    "port": 53,
     "read_only": false,
     "created_at": "2017-07-11T03:50:18.530Z",
     "updated_at": "2017-07-11T03:50:18.530Z"
-}]
+},
+{
+    "id": 1,
+    "statement": "match-clients",
+    "negate": false,
+    "position": 1,
+    "value_type": "ip_address",
+    "value": "1.1.1.1",
+    "status": "active",
+    "port": 53,
+    "read_only": false,
+    "created_at": "2017-07-11T03:50:18.530Z",
+    "updated_at": "2017-07-11T03:50:18.530Z"
+}
 ```
 
 This endpoint sort a statement.
 
-`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sort`
 
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Node_id | The ID of the zone statement's node to retrieve
-View_id | The ID of the zone statement's view to retrieve
-Zone_id | The ID of the zone statement's zone to retrieve
-
-## Sort multiple zone statement
-
-You may sort statements using this action.
-
-```shell
-curl --include \
-     --request POST \
-     --header "Content-Type: application/json" \
-     --data-binary "{
-    \"statement\": [
-        {
-             \"statement_id\": 3
-        },
-        {
-             \"position\": 0 
-        }
-    ]
-}" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/zones/22/statements/sort'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
-    "statement": "match-clients",
-    "position": 0,
-    "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
-    "status": "active",
-    "read_only": false,
-    "created_at": "2017-07-11T03:50:18.530Z",
-    "updated_at": "2017-07-11T03:50:18.530Z"
-}]
-```
-
-This endpoint sort multiple statement.
-
-`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/statements/sorts`
-
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------

@@ -10,9 +10,10 @@ toc_footers:
 
 includes:
   - nodes
-  - options
+  - options.md.erb
   - dns.md.erb
   - network.md.erb
+  - waf.md.erb
 
 search: true
 ---

@@ -92,9 +92,9 @@ curl --include \
      --request POST \
      --header "Content-Type: application/json" \
      --data-binary "{
-    \"type\": \"ip_address\",
-    \"value\": \"1.1.1.1\",
-    \"negate\": \"false\"
+    \"statement\": \"match-clients\",
+    \"value_type\": \"ip_address\",
+    \"value\": \"172.0.0.0\"
 }" \
 'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements'
 ```
@@ -103,17 +103,14 @@ curl --include \
 
 ```json
 {
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
+    "id": 2,
     "statement": "match-clients",
-    "position": 0,
-    "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
     "negate": false,
+    "position": 1,
+    "value_type": "ip_address",
+    "value": "172.0.0.0",
     "status": "active",
+    "port": 53,
     "read_only": false,
     "created_at": "2017-07-11T03:50:18.530Z",
     "updated_at": "2017-07-11T03:50:18.530Z"
@@ -137,9 +134,18 @@ View_id | The ID of the view statement's view to retrieve
 
 Parameter | Description
 --------- | -----------
-type | Type of the value
-value | Value for the type
-negate | True or false
+Statement |Name of the Statement
+Value_type | Value type of the statement
+Value | value of the statement
+
+Statement | Value_type | Value
+--------- | ---------- | -----
+match_clients | ip_address | IP Address value
+ | key | Key Value
+ | geo | Geolocation Value
+match_destinations | ip_address | IP Address value
+recursion | boolean | Yes or No
+allow-recursion | ip_address | IP Address value
 
 ### Delete a Statement
 
@@ -148,7 +154,7 @@ You may delete an statement using this action.
 ```shell
 curl --include \
      --request DELETE \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/1'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/statements/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -156,16 +162,13 @@ curl --include \
 ```json
 {
     "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
     "statement": "match-clients",
+    "negate": false,
     "position": 0,
     "value_type": "ip_address",
     "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
     "status": "active",
+    "port": 53,
     "read_only": false,
     "created_at": "2017-07-11T03:50:18.530Z",
     "updated_at": "2017-07-11T03:50:18.530Z"
@@ -184,52 +187,6 @@ Node_id | The ID of the view statement's node to retrieve
 View_id | The ID of the view statement's view to retrieve
 Id | The ID of the view statement to delete
 
-### Delete multiple statements
-
-You may delete multiple statements using this action.
-
-```shell
-curl --include \
-     --request DELETE \
-     --data-binary "{
-    \"statements\": \"[6,7]\"
-}" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/1'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
-    "statement": "match-clients",
-    "position": 0,
-    "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
-    "status": "active",
-    "read_only": false,
-    "created_at": "2017-07-11T03:50:18.530Z",
-    "updated_at": "2017-07-11T03:50:18.530Z"
-}]
-```
-
-This endpoint delete multiple statement.
-
-`DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements`
-
-#### URL Parameters
-
-Parameter | Description
---------- | -----------
-Node_id | The ID of the view statement's node to delete
-View_id | The ID of the view statement's view to delete
-
-
 ### Sort Statement
 
 You may sort statements using this action.
@@ -239,101 +196,52 @@ curl --include \
      --request PUT \
      --header "Content-Type: application/json" \
      --data-binary "{
-    \"statement\": [
-        {
-             \"statement_id\": 3
-        },
-        {
-             \"position\": 0 
-        }
-    ]
+    {
+    \"id\": \"2\",
+    \"position\" : \"0\"
+    }
 }" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/sort'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/sort'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[{
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
+{
+    "id": 2,
     "statement": "match-clients",
+    "negate": false,
     "position": 0,
     "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
+    "value": "172.0.0.0",
     "status": "active",
+    "port": 53,
     "read_only": false,
     "created_at": "2017-07-11T03:50:18.530Z",
     "updated_at": "2017-07-11T03:50:18.530Z"
-}]
+},
+{
+    "id": 1,
+    "statement": "match-clients",
+    "negate": false,
+    "position": 1,
+    "value_type": "ip_address",
+    "value": "1.1.1.1",
+    "status": "active",
+    "port": 53,
+    "read_only": false,
+    "created_at": "2017-07-11T03:50:18.530Z",
+    "updated_at": "2017-07-11T03:50:18.530Z"
+}
 ```
 
 This endpoint sort a statement.
 
-`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts`
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/sort`
 
 #### URL Parameters
 
 Parameter | Description
 --------- | -----------
-Node_id | The ID of the view statement's node to retrieve
-View_id | The ID of the view statement's view to retrieve
-
-### Sort multiple statement
-
-You may sort statements using this action.
-
-```shell
-curl --include \
-     --request POST \
-     --header "Content-Type: application/json" \
-     --data-binary "{
-    \"statement\": [
-        {
-             \"statement_id\": 3
-        },
-        {
-             \"position\": 0 
-        }
-    ]
-}" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/1/statements/sort'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-    "id": 1,
-    "node_id": 2,
-    "statementable_id": 51,
-    "statementable_type": "Dns::View",
-    "statement": "match-clients",
-    "position": 0,
-    "value_type": "ip_address",
-    "value": "1.1.1.1",
-    "port": 53,
-    "negate": false,
-    "status": "active",
-    "read_only": false,
-    "created_at": "2017-07-11T03:50:18.530Z",
-    "updated_at": "2017-07-11T03:50:18.530Z"
-}]
-```
-
-This endpoint sort multiple statement.
-
-`POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/statements/sorts`
-
-#### URL Parameters
-
-Parameter | Description
---------- | -----------
-Node_id | The ID of the view statement's node to retrieve
-View_id | The ID of the view statement's view to retrieve
-
+Node_id | The ID of the option statement's node to retrieve
 

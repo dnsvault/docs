@@ -1,6 +1,6 @@
-# Address Match List
+## Address Match List
 
-## List all Amls
+### List all Amls
 
 You may list collection of AML using this action. Default per page is 20.
 
@@ -51,18 +51,18 @@ curl --include \
 
 This endpoint retrieves all aml.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the aml's node to retrieve
 acl_id | The ID of the aml's acl to retrieve
 
-## Create Aml
+### Create Aml
 
 You may create a AML using this action. It takes a JSON object containing a parameters.
 
@@ -97,25 +97,25 @@ curl --include \
 
 This endpoint creates an aml.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the aml's node to retrieve
 acl_id | The ID of the aml's acl to retrieve
 
-#### Required Parameters
+##### Required Parameters
 
 Parameter | Description
 --------- | -----------
 address | The address of aml
 negate | True or False
 
-## Show Aml
+### Show Aml
 
 You may list collection of AML using this action. Default per page is 20.
 
@@ -142,11 +142,11 @@ curl --include \
 
 This endpoint retrieves an aml.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -154,7 +154,7 @@ Node_id | The ID of the aml's node to retrieve
 acl_id | The ID of the aml's acl to retrieve
 Id | The ID of aml to retrieve
 
-## Delete Aml
+### Delete Aml
 
 You may delete an AML using this action.
 
@@ -182,11 +182,11 @@ curl --include \
 
 This endpoint delete an aml.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/acls/:acl_id/amls/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------

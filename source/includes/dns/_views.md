@@ -64,7 +64,7 @@ Node_id | The ID of the view's node to retrieve
 ```shell
 curl --include \
      --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
-  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/2'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/56'
 ```
 
 
@@ -72,24 +72,14 @@ curl --include \
 
 ```json
 {
-  "id": 2,
-  "view_name": "roxme",
-  "description": "This is for internal network",
-  "status": true,
-  "position": 1,
-  "created_at": "2016-06-25T04:42:39.111Z",
-  "updated_at": "2016-06-25T04:42:39.146Z",
-  "node_id": 7,
-  "node": {
-    "id": 7,
-    "node_name": "elastic2.dnsvault.net",
-    "description": null,
-    "created_at": "2016-06-23T03:44:19.064Z",
-    "updated_at": "2016-06-23T03:44:19.064Z",
-    "tag": "agent",
-    "fingerprint": "83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B",
-    "fingerprint_algorithm": "SHA256"
-  }
+    "id": 56,
+    "node_id": 2,
+    "view_name": "huala",
+    "description": "",
+    "status": "active",
+    "position": 2,
+    "created_at": "2017-06-20T04:27:19.146Z",
+    "updated_at": "2017-06-20T04:27:19.205Z"
 }
 ```
 
@@ -114,7 +104,7 @@ curl --include \
      --header "Content-Type: application/json" \
      --data-binary "{
     \"view\": {
-        \"view_name\": \"internal\",
+        \"view_name\": \"dnsv\",
         \"description\": \"This is for internal network\"
     }
 }" \
@@ -126,24 +116,14 @@ curl --include \
 
 ```json
 {
-  "id": 18,
-  "view_name": "internal",
-  "description": "This is for internal network",
-  "status": true,
-  "position": 2,
-  "created_at": "2016-06-25T05:18:20.646Z",
-  "updated_at": "2016-06-25T05:18:20.646Z",
-  "node_id": 7,
-  "node": {
-    "id": 7,
-    "node_name": "elastic2.dnsvault.net",
-    "description": null,
-    "created_at": "2016-06-23T03:44:19.064Z",
-    "updated_at": "2016-06-23T03:44:19.064Z",
-    "tag": "agent",
-    "fingerprint": "83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B",
-    "fingerprint_algorithm": "SHA256"
-  }
+    "id": 57,
+    "node_id": 2,
+    "view_name": "dnsv",
+    "description": "This is for internal network",
+    "status": "active",
+    "position": 3,
+    "created_at": "2017-06-20T04:27:19.146Z",
+    "updated_at": "2017-06-20T04:27:19.205Z"
 }
 ```
 
@@ -164,7 +144,7 @@ Node_id | The ID of the view's node to retrieve
 Parameter | Description
 --------- | -----------
 view_name | View Name
-description | Description Of View
+description | Description of the view
 
 ### Update View
 
@@ -174,10 +154,11 @@ curl --include \
      --header "Content-Type: application/json" \
      --data-binary "{
     \"view\": {
-        \"description\": \"This is for internal network\"
+        \"view_name\": \"dnsv\",
+        \"description\": \"This is for external view\"
     }
 }" \
-  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/18'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/57'
 ```
 
 
@@ -186,26 +167,15 @@ curl --include \
 ```json
 
 {
-  "id": 18,
-  "view_name": "internal",
-  "description": "YOLO",
-  "status": true,
-  "position": 2,
-  "created_at": "2016-06-25T05:18:20.646Z",
-  "updated_at": "2016-06-25T05:18:20.646Z",
-  "node_id": 7,
-  "node": {
-    "id": 7,
-    "node_name": "elastic2.dnsvault.net",
-    "description": null,
-    "created_at": "2016-06-23T03:44:19.064Z",
-    "updated_at": "2016-06-23T03:44:19.064Z",
-    "tag": "agent",
-    "fingerprint": "83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B",
-    "fingerprint_algorithm": "SHA256"
-  }
+    "id": 57,
+    "node_id": 2,
+    "view_name": "dnsv",
+    "description": "This is for external view",
+    "status": "active",
+    "position": 3,
+    "created_at": "2017-06-20T04:27:19.146Z",
+    "updated_at": "2017-06-20T04:27:19.205Z"
 }
-
 ```
 
 This endpoint update a views.
@@ -225,6 +195,7 @@ Id | The ID of the view to retrieve
 
 Parameter | Description
 --------- | -----------
+view_name | View Name
 description | Description of a View
 
 ### Delete View
@@ -233,7 +204,7 @@ description | Description of a View
 curl --include \
      --request DELETE \
      --header "Authorization: Token iwwTXK54aahsosrx5JK7hkTe" \
-  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/18'
+  'http://www.dnsvault.net/api/v1/nodes/2/dns/views/57'
 ```
 
 
@@ -241,24 +212,14 @@ curl --include \
 
 ```json
 {
-  "id": 18,
-  "view_name": "internal",
-  "description": "This is for internal network",
-  "status": true,
-  "position": 2,
-  "created_at": "2016-06-25T05:18:20.646Z",
-  "updated_at": "2016-06-25T05:18:20.646Z",
-  "node_id": 7,
-  "node": {
-    "id": 7,
-    "node_name": "elastic2.dnsvault.net",
-    "description": null,
-    "created_at": "2016-06-23T03:44:19.064Z",
-    "updated_at": "2016-06-23T03:44:19.064Z",
-    "tag": "agent",
-    "fingerprint": "83:81:16:F1:6C:B3:F3:F2:40:F1:0E:6E:34:22:55:C5:F9:73:D4:DA:B2:78:4D:2F:12:11:B9:3A:8C:D2:D4:3B",
-    "fingerprint_algorithm": "SHA256"
-  }
+    "id": 57,
+    "node_id": 2,
+    "view_name": "dnsv",
+    "description": "This is for external view",
+    "status": "active",
+    "position": 3,
+    "created_at": "2017-06-20T04:27:19.146Z",
+    "updated_at": "2017-06-20T04:27:19.205Z"
 }
 
 ```
@@ -275,3 +236,65 @@ Parameter | Description
 --------- | -----------
 Node_id | The ID of the view's node to retrieve
 Id | The ID of the view to delete
+
+### Sort Statement
+
+You may sort statements using this action.
+
+```shell
+curl --include \
+     --request PUT \
+     --header "Content-Type: application/json" \
+     --data-binary "{
+    {
+    "id": "56",
+    "position" : "0"
+    }
+}" \
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/sort'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": 56,
+    "node_id": 2,
+    "view_name": "huala",
+    "description": "",
+    "status": "active",
+    "position": 0,
+    "created_at": "2017-06-20T04:27:19.146Z",
+    "updated_at": "2017-06-20T04:27:19.205Z"
+},
+{
+    "id": 50,
+    "node_id": 2,
+    "view_name": "cloudlocal",
+    "description": "",
+    "status": "active",
+    "position": 1,
+    "created_at": "2017-03-31T09:17:41.743Z",
+    "updated_at": "2017-03-31T09:17:41.766Z"
+},
+{
+    "id": 51,
+    "node_id": 2,
+    "view_name": "cloudint",
+    "description": "",
+    "status": "active",
+    "position": 2,
+    "created_at": "2017-03-31T09:17:55.173Z",
+    "updated_at": "2017-03-31T09:17:55.192Z"
+}
+```
+
+This endpoint sort a statement.
+
+`PUT http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/sort`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Node_id | The ID of the option statement's node to retrieve

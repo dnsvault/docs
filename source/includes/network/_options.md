@@ -1,6 +1,6 @@
-# Network Options
+## Options
 
-## List all Options
+### List all Options
 
 You may list collection of Network Options using this action. Default per page is 20.
 
@@ -48,17 +48,17 @@ curl --include \
 
 This endpoint retrieves all Network Options.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/options`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network option's node to retrieve
 
-## Show Network Options
+### Show Network Options
 
 You may list collection of Network Options using this action. Default per page is 20.
 
@@ -84,18 +84,18 @@ curl --include \
 
 This endpoint retrieves an Network Options.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/network/options/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network option's node to retrieve
 Id | The ID of the network option to retrieve
 
-## Update Network Options
+### Update Network Options
 
 ```shell
 curl --include \
@@ -127,18 +127,18 @@ curl --include \
 
 This endpoint update a Network Options.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://www.dnsvault.net/api/v1/nodes/:node_id/network/options/:id`
 
-#### URL Parameters
+##### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Node_id | The ID of the network option's node to retrieve
 Id | The ID of the network option to retrieve
 
-#### Required Parameters
+##### Required Parameters
 
 Parameter | Description
 --------- | -----------

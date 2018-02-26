@@ -1,6 +1,6 @@
-# Records (create & delete)
+## Records (delete many)
 
-## List all Records
+### List all Records
 
 You may list collection of zone using this action.
 
@@ -15,92 +15,50 @@ curl --include \
 
 ```json
 [
-  {
-    "id": 10,
-    "host_id": null,
-    "zone_id": 13,
-    "rr_zone": "test05.my",
-    "rr_host": "@",
-    "rr_combine": "test05.my",
-    "rr_ttl": "3600",
-    "rr_type": "SOA",
-    "rr_data": "a.dnsvault.net. amir.localhost.my. 1 86400 7200 3600000 3600",
-    "status": true,
-    "processing_status": true,
-    "backend_status": false,
-    "delete_status": false,
-    "created_at": "2015-12-30T16:57:19.249Z",
-    "updated_at": "2015-12-30T16:57:19.249Z"
-  },
-  {
-    "id": 11,
-    "host_id": null,
-    "zone_id": 13,
-    "rr_zone": "test05.my",
-    "rr_host": "@",
-    "rr_combine": "test05.my",
-    "rr_ttl": "3600",
-    "rr_type": "NS",
-    "rr_data": "a.dnsvault.net.",
-    "status": true,
-    "processing_status": true,
-    "backend_status": false,
-    "delete_status": false,
-    "created_at": "2015-12-30T16:57:19.259Z",
-    "updated_at": "2015-12-30T16:57:19.259Z"
-  },
-  {
-    "id": 12,
-    "host_id": null,
-    "zone_id": 13,
-    "rr_zone": "test05.my",
-    "rr_host": "sample1",
-    "rr_combine": "sample1.test05.my.",
-    "rr_ttl": "86400",
-    "rr_type": "A",
-    "rr_data": "2.2.2.101",
-    "status": true,
-    "processing_status": false,
-    "backend_status": false,
-    "delete_status": false,
-    "created_at": "2015-12-30T16:59:18.802Z",
-    "updated_at": "2015-12-30T16:59:18.802Z"
-  },
-  {
-    "id": 13,
-    "host_id": null,
-    "zone_id": 13,
-    "rr_zone": "test05.my",
-    "rr_host": "sample1",
-    "rr_combine": "sample1.test05.my.",
-    "rr_ttl": "86400",
-    "rr_type": "A",
-    "rr_data": "2.2.2.109",
-    "status": true,
-    "processing_status": false,
-    "backend_status": false,
-    "delete_status": false,
-    "created_at": "2015-12-30T17:00:32.953Z",
-    "updated_at": "2015-12-30T17:00:32.953Z"
-  }
+    {
+        "id": 10,
+        "domain": "dnsv.my",
+        "subdomain": "yolo",
+        "combine": "yolo.dnsv.my",
+        "ttl": "86400",
+        "kind": "A",
+        "data": "2.2.11.1",
+        "status": "active",
+        "read_only": false,
+        "created_at": "2018-02-23T08:55:37.547Z",
+        "updated_at": "2018-02-23T08:55:37.547Z"
+    },
+    {
+        "id": 11,
+        "domain": null,
+        "subdomain": "ddd",
+        "combine": null,
+        "ttl": "86400",
+        "kind": "AAAA",
+        "data": "::1",
+        "status": "active",
+        "read_only": false,
+        "created_at": "2018-02-22T05:49:39.711Z",
+        "updated_at": "2018-02-22T05:49:39.711Z"
+    }
 ]
 ```
 
 This endpoint show all records.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/records`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
-Node_id | The ID of the zone statement's node to retrieve
-View_id | The ID of the zone statement's view to retrieve
-Zone_id | The ID of the zone statement's zone to retrieve
+Node_id | The ID of the record's node to retrieve
+View_id | The ID of the record's view to retrieve
+Zone_id | The ID of the record's zone to retrieve
 
-## Show Record
+### Show Record
 
 You may view detail of a record using this action.
 
@@ -114,30 +72,26 @@ curl --include \
 ```json
 {
     "id": 10,
-    "host_id": null,
-    "zone_id": 13,
-    "rr_zone": "test05.my",
-    "rr_host": "@",
-    "rr_combine": "test05.my",
-    "rr_ttl": "3600",
-    "rr_type": "SOA",
-    "rr_data": "a.dnsvault.net. amir.localhost.my. 1 86400 7200 3600000 3600",
-    "status": true,
-    "processing_status": true,
-    "backend_status": false,
-    "delete_status": false,
-    "created_at": "2015-12-30T16:57:19.249Z",
-    "updated_at": "2015-12-30T16:57:19.249Z"
+    "domain": "dnsv.my",
+    "subdomain": "yolo",
+    "combine": "yolo.dnsv.my",
+    "ttl": "86400",
+    "kind": "A",
+    "data": "2.2.11.1",
+    "status": "active",
+    "read_only": false,
+    "created_at": "2018-02-23T08:55:37.547Z",
+    "updated_at": "2018-02-23T08:55:37.547Z"
 }
 ```
 
-This endpoint retrieves detail of a statement.
+This endpoint retrieves detail of a record.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/records/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -146,7 +100,7 @@ View_id | The ID of the record's view to retrieve
 Zone_id | The ID of the record's zone to retrieve
 Id | The ID of the record to retrieve
 
-## Create Records (required parameter)
+### Create Records
 
 You may create multiple records for a host. After create you can check using dig tool, example: dig @srv1.dnsvault.net sample1.test05.my any
 
@@ -213,42 +167,34 @@ curl --include \
 
 This endpoint create multiple records.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/records`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
-Node_id | The ID of the zone statement's node to retrieve
-View_id | The ID of the zone statement's view to retrieve
-Zone_id | The ID of the zone statement's zone to retrieve
+Node_id | The ID of the record's node to retrieve
+View_id | The ID of the record's view to retrieve
+Zone_id | The ID of the record's zone to retrieve
 
-### Required Parameters
+#### Required Parameters
 
 Parameter | Description
 --------- | -----------
-type | The ID of the zone statement's node to retrieve
-ttl | The ID of the zone statement's view to retrieve
+type | The ID of the record's node to retrieve
+ttl | The ID of the record's view to retrieve
 
-## Delete Records (pending)
+### Delete Records (pending)
 
-## Delete Record
+### Delete Record
 You may delete records of host using this action. For testing you can use dig tool example: dig @srv1.dnsvault.net sample1.test05.my any
 
 ```shell
 curl --include \
      --request DELETE \
-     --header "Content-Type: application/json" \
-     --data-binary "{
-    \"host\": \"sample1\",
-    \"records\": [
-        { \"type\":\"A\", \"data\":\"2.2.2.2\"},
-        { \"ttl\":\"7200\", \"type\":\"MX\", \"data\":\"10 mail.server01.com.\"}
-    ]
-}" \
-'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/records'
+'http://www.dnsvault.net/api/v1/nodes/2/dns/views/51/zones/1/records/10'
 ```
 
 
@@ -256,47 +202,31 @@ curl --include \
 
 ```json
 {
-  "messages": {
-    "success": [
-      {
-        "id": 14,
-        "host_id": null,
-        "zone_id": 13,
-        "rr_zone": "test05.my",
-        "rr_host": "sample1",
-        "rr_combine": "sample1.test05.my.",
-        "rr_ttl": "86400",
-        "rr_type": "A",
-        "rr_data": "2.2.2.2",
-        "status": true,
-        "processing_status": false,
-        "backend_status": false,
-        "delete_status": false,
-        "created_at": "2015-12-30T17:54:09.796Z",
-        "updated_at": "2015-12-30T17:54:09.796Z"
-      }
-    ],
-    "errors": [
-      {
-        "host": "sample1",
-        "error": "Record with type: MX and data: 10 mx.com. is not available, please try again."
-      }
-    ]
-  }
+    "id": 10,
+    "domain": "dnsv.my",
+    "subdomain": "yolo",
+    "combine": "yolo.dnsv.my",
+    "ttl": "86400",
+    "kind": "A",
+    "data": "2.2.11.1",
+    "status": "active",
+    "read_only": false,
+    "created_at": "2018-02-23T08:55:37.547Z",
+    "updated_at": "2018-02-23T08:55:37.547Z"
 }
 ```
 
-This endpoint create a record.
+This endpoint delete a record.
 
-### HTTP Request
+#### HTTP Request
 
 `DELETE http://www.dnsvault.net/api/v1/nodes/:node_id/dns/views/:view_id/zones/:zone_id/records/:id`
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
-Node_id | The ID of the zone statement's node to retrieve
-View_id | The ID of the zone statement's view to retrieve
-Zone_id | The ID of the zone statement's zone to retrieve
-id | The ID of the zone to delete
+Node_id | The ID of the record's node to retrieve
+View_id | The ID of the record's view to retrieve
+Zone_id | The ID of the record's zone to retrieve
+id | The ID of the record to delete
